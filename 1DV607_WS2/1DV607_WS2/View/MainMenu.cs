@@ -8,6 +8,7 @@ namespace _1DV607_WS2.View
 {
     class MainMenu
     {
+
         public void mainMenu()
         {
             ConsoleKeyInfo cki;
@@ -38,6 +39,7 @@ namespace _1DV607_WS2.View
                     {
                         case ConsoleKey.D1:
                             {
+                                createMemberMenu();
                                 break;
                             }
                         case ConsoleKey.D2:
@@ -74,7 +76,8 @@ namespace _1DV607_WS2.View
                             }
                         default :
                             {
-                                Console.WriteLine("  Du måste välja ett tillgängligt menyalternativ <1-8> eller ESC");
+                                Console.WriteLine("Du måste välja ett tillgängligt menyalternativ <1-8> eller ESC");
+                                pressKeyToContinue();
                                 break;
                             };
                     }
@@ -85,6 +88,49 @@ namespace _1DV607_WS2.View
                 }
             }
             while (true);
+        }
+
+
+        private void createMemberMenu()
+        {
+            string fName = readLine("Förnamn: ");
+
+        }
+
+        private string readLine(string text, bool mandatory = true)
+        {
+            bool done = false;
+            String input;
+            do
+            {
+                Console.WriteLine("");
+                Console.Write(text);
+                input = Console.ReadLine();
+                if (String.IsNullOrWhiteSpace(input))
+                {
+                    Console.Write("Du måste mata in något!");
+                    pressKeyToContinue();
+                }
+                else
+                {
+                    done = true;
+                }
+            }
+            while (!done);
+            return input;
+        }
+
+        void pressKeyToContinue()
+        {
+            Console.WriteLine("");
+            Console.WriteLine("Tryck valfri tangent för att fortsätta");
+            ConsoleKeyInfo cki;
+            cki = Console.ReadKey(true);
+            switch (cki.Key)
+            {
+                default:
+                    return;
+            }
         }
 
     }
