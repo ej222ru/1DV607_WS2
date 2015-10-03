@@ -1,4 +1,5 @@
 ﻿using _1DV607_WS2.View;
+using _1DV607_WS2.Controller;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,10 @@ namespace _1DV607_WS2
     {
         static void Main(string[] args)
         {
-
-            MainMenu menu = new MainMenu();
-            menu.mainMenu();
+            
+           Menu menu = new Menu();
+           Control controller = new Control(menu);
+           controller.start();
         }
     }
 }
