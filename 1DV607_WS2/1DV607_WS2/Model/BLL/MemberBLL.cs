@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _1DV607_WS2.Model.BLL
 {
-    class MemberBLL
+    public class MemberBLL
     {
         // Egenskapernas namn och typ ges av tabellen
         // Member i databasen.

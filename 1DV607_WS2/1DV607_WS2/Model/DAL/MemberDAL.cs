@@ -13,5 +13,24 @@ namespace _1DV607_WS2.Model.DAL
         {
 
         }
+        public void UpdateMember(MemberBLL member)
+        {
+
+        }
+        public void DeleteMember(MemberBLL member)
+        {
+
+        }
+        public MemberBLL GetMember(MemberBLL member)
+        {
+            return null;
+        }
+
+        public IEnumerable<MemberBLL> GetMembers()
+        {
+
+            return null;
+        }
+
     }
 }
