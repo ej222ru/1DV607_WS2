@@ -46,10 +46,18 @@ namespace _1DV607_WS2.Controller
                         }
                     case 2:
                         {
+                            int memberId = this.menu.getMemberMenu();
+                            MemberBLL member = new MemberBLL();
+                            member.MemberId = memberId;
+                            member = GetMember(member);
+                            member = this.menu.updateMemberMenu(member);
+                            SaveMember(member);
                             break;
                         }
                     case 3:
                         {
+                            int memberId = this.menu.getMemberMenu();
+
                             break;
                         }
                     case 4:
@@ -85,6 +93,11 @@ namespace _1DV607_WS2.Controller
             while (true);
         }
 
+        public MemberBLL GetMember(MemberBLL member)
+        {
+            return MemberDAL.GetMember(member);
+        }
+
         public void SaveMember(MemberBLL member)
         {
             if (member == null || member.SSN == null)  // more validations ??
@@ -95,19 +108,17 @@ namespace _1DV607_WS2.Controller
             if (GetMember(member) != null)
             {
                 MemberDAL.UpdateMember(member);
-
             }
             else
             {
                 MemberDAL.InsertMember(member);
-
             }
         }
 
 
-        public MemberBLL GetMember(MemberBLL member)
+        public void DeleteMember(int memberId)
         {
-            return MemberDAL.GetMember(member);
+            MemberDAL.DeleteMember(memberId);
         }
 
     }

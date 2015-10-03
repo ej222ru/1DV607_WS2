@@ -45,6 +45,7 @@ namespace _1DV607_WS2.View
                         }
                     case ConsoleKey.D2:
                         {
+                            ret = 2;
                             break;
                         }
                     case ConsoleKey.D3:
@@ -105,6 +106,48 @@ namespace _1DV607_WS2.View
             return member;
         }
 
+        public int getMemberMenu()
+        {
+            int memberId;
+            bool done = false;
+            String input;
+            do
+            {
+                input = readLine("Enter member id: ");
+                if (Int32.TryParse(input, out memberId))
+                    done = true;
+                else
+                {
+                    Console.Write("You have to enter member id as intger numbers!");
+                    pressKeyToContinue();
+                }
+            }
+            while (!done);
+
+            return memberId;
+        }        
+        public MemberBLL updateMemberMenu(MemberBLL member)
+        {
+
+
+            Console.WriteLine("First name: " + member.FirstName);
+            Console.WriteLine("Last name: " + member.LastName);
+            Console.WriteLine("SSN: " + member.SSN);
+
+            Console.WriteLine("Just press ENTER for fields you don't want to change");
+
+            string fName = readLine("First name: ", false);
+            string lName = readLine("Last name: ", false);
+            string SSN = readLine("SSN: ", false);
+            if (fName != "")
+                member.FirstName = fName;
+            if (lName != "")
+                member.LastName = lName;
+            if (SSN != "")
+                member.SSN = SSN;
+            return member;
+        }
+
         private string readLine(string text, bool mandatory = true)
         {
             bool done = false;
@@ -114,9 +157,9 @@ namespace _1DV607_WS2.View
                 Console.WriteLine("");
                 Console.Write(text);
                 input = Console.ReadLine();
-                if (String.IsNullOrWhiteSpace(input))
+                if (mandatory && String.IsNullOrWhiteSpace(input))
                 {
-                    Console.Write("Du måste mata in något!");
+                    Console.Write("You have to enter something!");
                     pressKeyToContinue();
                 }
                 else
@@ -131,7 +174,7 @@ namespace _1DV607_WS2.View
         void pressKeyToContinue()
         {
             Console.WriteLine("");
-            Console.WriteLine("Tryck valfri tangent för att fortsätta");
+            Console.WriteLine("Press any key to continue");
             ConsoleKeyInfo cki;
             cki = Console.ReadKey(true);
             switch (cki.Key)
