@@ -18,18 +18,18 @@ namespace _1DV607_WS2.Model.DAL
                 try
                 {
 
-                    SqlCommand cmd = new SqlCommand("appSchema.uspAddMember", conn);
+                    SqlCommand cmd = new SqlCommand("appSchema.uspInsertMember", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = member.FirstName;
+                    cmd.Parameters.Add("@FirstName", SqlDbType.VarChar, 25).Value = member.FirstName;
                     cmd.Parameters.Add("@LastName", SqlDbType.VarChar, 50).Value = member.LastName;
-                    cmd.Parameters.Add("@SSN", SqlDbType.VarChar, 50).Value = member.SSN;
-                    cmd.Parameters.Add("@MemberId", SqlDbType.Int, 4).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@SSN", SqlDbType.VarChar, 12).Value = member.SSN;
+                    cmd.Parameters.Add("@MemberId", SqlDbType.Int).Direction = ParameterDirection.Output;
 
                     conn.Open();
 
                     cmd.ExecuteNonQuery();
 
-                    member.MemberId = (int)cmd.Parameters["@MemberId"].Value;
+                    member.MemberId = Convert.ToInt32(cmd.Parameters["@MemberId"].Value);
                 }
                 catch
                 {
@@ -39,7 +39,26 @@ namespace _1DV607_WS2.Model.DAL
         }
         public void UpdateMember(MemberBLL member)
         {
+            using (SqlConnection conn = CreateConnection())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("appSchema.uspUpdateMember", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@MemberId", SqlDbType.Int, 4).Value = member.MemberId;
+                    cmd.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = member.FirstName;
+                    cmd.Parameters.Add("@LastName", SqlDbType.VarChar, 50).Value = member.LastName;
+                    cmd.Parameters.Add("@SSN", SqlDbType.VarChar, 50).Value = member.SSN;
 
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+                catch
+                {
+                    throw new ApplicationException("An error occured while updating member at the database");
+                }
+            }
         }
         public void DeleteMember(int memberId)
         {
@@ -47,7 +66,7 @@ namespace _1DV607_WS2.Model.DAL
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("appSchema.uspRemoveMember", conn);
+                    SqlCommand cmd = new SqlCommand("appSchema.uspDeleteMember", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@MemberID", SqlDbType.Int, 4).Value = memberId;
                     conn.Open();
@@ -75,12 +94,10 @@ namespace _1DV607_WS2.Model.DAL
                     {
                         if (reader.Read())
                         {
-                            int MemberIdIndex   = reader.GetOrdinal("MemberId");
                             int FirstNameIndex  = reader.GetOrdinal("FirstName");
                             int LastNameIndex   = reader.GetOrdinal("LastName");
                             int SSNIndex        = reader.GetOrdinal("SSN");
 
-                            member.MemberId     = reader.GetInt32(MemberIdIndex);
                             member.FirstName    = reader.GetString(FirstNameIndex);
                             member.LastName     = reader.GetString(LastNameIndex);
                             member.SSN          = reader.GetString(SSNIndex);

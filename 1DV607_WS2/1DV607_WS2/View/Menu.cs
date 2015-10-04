@@ -22,14 +22,15 @@ namespace _1DV607_WS2.View
                 Console.WriteLine("Välj funktion: ");
                 Console.WriteLine("  1   -  skapa en medlem");
                 Console.WriteLine("  2  -   uppdatera medlem");
-                Console.WriteLine("  3   -  ta bort medlem");
+                Console.WriteLine("  3  -   visa medlem");
+                Console.WriteLine("  4   -  ta bort medlem");
                 Console.WriteLine("");
-                Console.WriteLine("  4   -  lägg till båt");
-                Console.WriteLine("  5   -  uppdatera båt");
-                Console.WriteLine("  6   -  ta bort båt");
+                Console.WriteLine("  5   -  lägg till båt");
+                Console.WriteLine("  6   -  uppdatera båt");
+                Console.WriteLine("  7   -  ta bort båt");
                 Console.WriteLine("");
-                Console.WriteLine("  7   -  om du vill lista medlemmar");
-                Console.WriteLine("  8   -  om du vill lista medlemmar utförligt");
+                Console.WriteLine("  8   -  om du vill lista medlemmar");
+                Console.WriteLine("  9   -  om du vill lista medlemmar utförligt");
                 Console.WriteLine("");
                 Console.WriteLine("  Esc - avslutar.");
                 Console.WriteLine("");
@@ -50,26 +51,37 @@ namespace _1DV607_WS2.View
                         }
                     case ConsoleKey.D3:
                         {
+                            ret = 3;
                             break;
                         }
                     case ConsoleKey.D4:
                         {
+                            ret = 4;
                             break;
                         }
                     case ConsoleKey.D5:
                         {
+                            ret = 5;
                             break;
                         }
                     case ConsoleKey.D6:
                         {
+                            ret = 6;
                             break;
                         }
                     case ConsoleKey.D7:
                         {
+                            ret = 7;
                             break;
                         }
                     case ConsoleKey.D8:
                         {
+                            ret = 8;
+                            break;
+                        }
+                    case ConsoleKey.D9:
+                        {
+                            ret = 9;
                             break;
                         }
                     case ConsoleKey.Escape:
@@ -105,6 +117,8 @@ namespace _1DV607_WS2.View
 
             return member;
         }
+        
+
 
         public int getMemberMenu()
         {
@@ -128,8 +142,6 @@ namespace _1DV607_WS2.View
         }        
         public MemberBLL updateMemberMenu(MemberBLL member)
         {
-
-
             Console.WriteLine("First name: " + member.FirstName);
             Console.WriteLine("Last name: " + member.LastName);
             Console.WriteLine("SSN: " + member.SSN);
@@ -146,6 +158,69 @@ namespace _1DV607_WS2.View
             if (SSN != "")
                 member.SSN = SSN;
             return member;
+        }
+
+//*****************
+
+        public void memberCreatedMenu(MemberBLL member)
+        {
+            Console.WriteLine("****  You created member ****\n");
+            showMember(member);
+            pressKeyToContinue();
+        }
+        public void memberUpdatedMenu(MemberBLL member, bool succeeded = true)
+        {
+            if (succeeded)
+            {
+                Console.WriteLine("****  You updated member ****\n");
+                showMember(member);
+            }
+            else
+            {
+                Console.WriteLine("****  Member update failed ****\n");
+                Console.WriteLine("Member Id:  " + member.MemberId);
+
+            }
+            pressKeyToContinue();
+        }
+        public void showMemberMenu(MemberBLL member, bool succeeded = true)
+        {
+            if (succeeded)
+            {
+                Console.WriteLine("****  member ****\n");
+                showMember(member);
+            }
+            else
+            {
+                Console.WriteLine("****  Member info not found ****\n");
+                Console.WriteLine("Member Id:  " + member.MemberId);
+
+            }
+            pressKeyToContinue();
+        }
+        public void memberDeletedMenu(int memberId, bool succeeded = true)
+        {
+            if (succeeded)
+            {
+                Console.WriteLine("****  member deleted ****\n");
+                Console.WriteLine("Member Id:  " + memberId);
+            }
+            else
+            {
+                Console.WriteLine("****  Member could not be deleted ****\n");
+                Console.WriteLine("Member Id:  " + memberId);
+            }
+            pressKeyToContinue();
+        }
+
+
+//************
+        public void showMember(MemberBLL member)
+        {
+                Console.WriteLine("Member Id:  " + member.MemberId);
+                Console.WriteLine("First name: " + member.FirstName);
+                Console.WriteLine("Last name:  " + member.LastName);
+                Console.WriteLine("SSN:        " + member.SSN);
         }
 
         private string readLine(string text, bool mandatory = true)
@@ -170,6 +245,7 @@ namespace _1DV607_WS2.View
             while (!done);
             return input;
         }
+
 
         void pressKeyToContinue()
         {

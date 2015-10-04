@@ -26,7 +26,6 @@ namespace _1DV607_WS2.Controller
 
         public void start()
         {
-            bool start = false;
             int menuChoice;
             do
             {
@@ -42,6 +41,8 @@ namespace _1DV607_WS2.Controller
                         {
                             MemberBLL member = this.menu.createMemberMenu();
                             SaveMember(member);
+                            this.menu.memberCreatedMenu(member);
+
                             break;
                         }
                     case 2:
@@ -50,18 +51,61 @@ namespace _1DV607_WS2.Controller
                             MemberBLL member = new MemberBLL();
                             member.MemberId = memberId;
                             member = GetMember(member);
-                            member = this.menu.updateMemberMenu(member);
-                            SaveMember(member);
+                            if (member != null)
+                            {
+                                member = this.menu.updateMemberMenu(member);
+                                SaveMember(member);
+                                member = GetMember(member);
+                                this.menu.memberUpdatedMenu(member);
+                            }
+                            else
+                            {
+                                MemberBLL voidMember = new MemberBLL();
+                                voidMember.MemberId = memberId;
+                                this.menu.memberUpdatedMenu(voidMember, false);
+                            }
                             break;
                         }
                     case 3:
                         {
                             int memberId = this.menu.getMemberMenu();
-
+                            MemberBLL member = new MemberBLL();
+                            member.MemberId = memberId;
+                            member = GetMember(member);
+                            if (member != null)
+                            {
+                                this.menu.showMemberMenu(member);
+                            }
+                            else
+                            {
+                                MemberBLL voidMember = new MemberBLL();
+                                voidMember.MemberId = memberId;
+                                this.menu.showMemberMenu(voidMember, false);
+                            }
                             break;
                         }
                     case 4:
                         {
+
+                            int memberId = this.menu.getMemberMenu();
+                            MemberBLL member = new MemberBLL();
+                            member.MemberId = memberId;
+                            member = GetMember(member);
+                            if (member != null)
+                            {
+                                DeleteMember(memberId);
+                                member = GetMember(member);
+                                if (member != null)
+                                    this.menu.memberDeletedMenu(memberId, false);
+                                else
+                                    this.menu.memberDeletedMenu(memberId);
+                            }
+                            else
+                            {
+                                MemberBLL voidMember = new MemberBLL();
+                                voidMember.MemberId = memberId;
+                                this.menu.showMemberMenu(voidMember, false);
+                            }
                             break;
                         }
                     case 5:
