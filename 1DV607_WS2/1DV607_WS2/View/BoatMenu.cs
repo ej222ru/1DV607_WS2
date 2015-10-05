@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _1DV607_WS2.View
 {
-    class BoatMenu
+    public class BoatMenu
     {
         public BoatBLL createBoatMenu(int memberId)
         {

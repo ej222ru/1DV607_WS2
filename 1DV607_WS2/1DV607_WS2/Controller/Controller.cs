@@ -137,45 +137,68 @@ namespace _1DV607_WS2.Controller
                     case 6:
                         {
                             int memberId = this.menu.getMemberMenu();
-
-                            IEnumerable<BoatBLL> boats;
-                            boats = GetBoats(memberId);
-                            BoatBLL boat = this.menu.selectBoatMenu(boats);
-                            if (boat != null)
+                            MemberBLL member = new MemberBLL();
+                            member.MemberId = memberId;
+                            member = GetMember(member);
+                            if (member != null)
                             {
-                                boat = this.menu.updateBoatMenu(boat);
-                                SaveBoat(boat);
-                                boat = GetBoat(boat);
-                                this.menu.boatUpdatedMenu(boat);
+                                IEnumerable<BoatBLL> boats;
+                                boats = GetBoats(memberId);
+                                BoatBLL boat = this.menu.selectBoatMenu(boats);
+                                if (boat != null)
+                                {
+                                    boat = this.menu.updateBoatMenu(boat);
+                                    SaveBoat(boat);
+                                    boat = GetBoat(boat);
+                                    this.menu.boatUpdatedMenu(boat);
+                                }
+                                else
+                                {
+                                    BoatBLL voidBoat = new BoatBLL();
+                                    voidBoat.MemberId = memberId;
+                                    this.menu.boatUpdatedMenu(voidBoat, false);
+                                }
                             }
                             else
                             {
-                                BoatBLL voidBoat = new BoatBLL();
-                                voidBoat.MemberId = memberId;
-                                this.menu.boatUpdatedMenu(voidBoat, false);
+                                MemberBLL voidMember = new MemberBLL();
+                                voidMember.MemberId = memberId;
+                                this.menu.showMemberMenu(voidMember, false);
                             }
                             break;
                         }
                     case 7:
                         {
                             int memberId = this.menu.getMemberMenu();
-                            IEnumerable<BoatBLL> boats;
-                            boats = GetBoats(memberId);
-                            BoatBLL boat = this.menu.selectBoatMenu(boats);
-                            if (boat != null)
+                            MemberBLL member = new MemberBLL();
+                            member.MemberId = memberId;
+                            member = GetMember(member);
+                            if (member != null)
                             {
-                                DeleteBoat(boat.BoatId);
-                                boat = GetBoat(boat);
+                                IEnumerable<BoatBLL> boats;
+                                boats = GetBoats(memberId);
+                                BoatBLL boat = this.menu.selectBoatMenu(boats);
                                 if (boat != null)
-                                    this.menu.boatDeletedMenu(boat, false);
+                                {
+                                    DeleteBoat(boat.BoatId);
+                                    boat = GetBoat(boat);
+                                    if (boat != null)
+                                        this.menu.boatDeletedMenu(boat, false);
+                                    else
+                                        this.menu.boatDeletedMenu(boat);
+                                }
                                 else
-                                    this.menu.boatDeletedMenu(boat);
+                                {
+                                    BoatBLL voidBoat = new BoatBLL();
+                                    voidBoat.MemberId = memberId;
+                                    this.menu.boatDeletedMenu(boat, false);
+                                }
                             }
                             else
                             {
-                                BoatBLL voidBoat = new BoatBLL();
-                                voidBoat.MemberId = memberId;
-                                this.menu.boatDeletedMenu(boat, false);
+                                MemberBLL voidMember = new MemberBLL();
+                                voidMember.MemberId = memberId;
+                                this.menu.showMemberMenu(voidMember, false);
                             }
                             break;
                         }
