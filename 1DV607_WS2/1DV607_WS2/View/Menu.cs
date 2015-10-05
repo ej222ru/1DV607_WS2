@@ -9,7 +9,12 @@ namespace _1DV607_WS2.View
 {
     public class Menu
     {
+        private BoatMenu boatMenu;
 
+        public Menu()
+        {
+            boatMenu = new BoatMenu();
+        }
         public int mainMenu()
         {
             int ret = 0;
@@ -160,6 +165,16 @@ namespace _1DV607_WS2.View
             return member;
         }
 
+//*********************
+public BoatBLL createBoatMenu(int memberId)
+{
+    return boatMenu.createBoatMenu(memberId);
+}
+public void boatCreatedMenu(BoatBLL boat)
+{
+    boatMenu.boatCreatedMenu(boat);
+}
+
 //*****************
 
         public void memberCreatedMenu(MemberBLL member)
@@ -222,8 +237,19 @@ namespace _1DV607_WS2.View
                 Console.WriteLine("Last name:  " + member.LastName);
                 Console.WriteLine("SSN:        " + member.SSN);
         }
+        public void showMemberList(IEnumerable<MemberBLL> members)
+        {
+            Console.WriteLine("****  Members ****\n");
 
-        private string readLine(string text, bool mandatory = true)
+            foreach (MemberBLL member in members)
+            {
+                Console.WriteLine("MemberId:" + member.MemberId + " " + member.FirstName + " " + member.LastName + "  Boats: ");
+            }
+            pressKeyToContinue();
+        }
+ 
+ //************
+        public static string readLine(string text, bool mandatory = true)
         {
             bool done = false;
             String input;
@@ -232,6 +258,7 @@ namespace _1DV607_WS2.View
                 Console.WriteLine("");
                 Console.Write(text);
                 input = Console.ReadLine();
+
                 if (mandatory && String.IsNullOrWhiteSpace(input))
                 {
                     Console.Write("You have to enter something!");
@@ -246,8 +273,30 @@ namespace _1DV607_WS2.View
             return input;
         }
 
+        public static int readInt(string text)
+        {
+            int intInput;
+            bool done = false;
+            String input;
+            do
+            {
+                input = readLine("Enter member id: ");
+                if (Int32.TryParse(input, out intInput))
+                    done = true;
+                else
+                {
+                    Console.Write("You have to enter an integer number!");
+                    pressKeyToContinue();
+                }
+            }
+            while (!done);
 
-        void pressKeyToContinue()
+            return intInput;
+        }
+
+
+
+        public static void pressKeyToContinue()
         {
             Console.WriteLine("");
             Console.WriteLine("Press any key to continue");

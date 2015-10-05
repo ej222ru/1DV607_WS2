@@ -68,7 +68,7 @@ namespace _1DV607_WS2.Model.DAL
                 {
                     SqlCommand cmd = new SqlCommand("appSchema.uspDeleteMember", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MemberID", SqlDbType.Int, 4).Value = memberId;
+                    cmd.Parameters.Add("@MemberId", SqlDbType.Int, 4).Value = memberId;
                     conn.Open();
 
                     cmd.ExecuteNonQuery();
@@ -111,13 +111,6 @@ namespace _1DV607_WS2.Model.DAL
                     throw new ApplicationException("An error occured while getting a member from the database.");
                 }
             }
-
-/* test before DB implemented
-            member.FirstName = "Otto";
-            member.LastName = "Berg";
-            member.SSN = "123456";
-            return member 
- */ 
         }
 
         public IEnumerable<MemberBLL> GetMembers()

@@ -23,6 +23,12 @@ namespace _1DV607_WS2.Controller
         {
             get { return _memberDAL ?? (_memberDAL = new MemberDAL()); }
         }
+        private BoatDAL _boatDAL;
+        private BoatDAL BoatDAL
+        {
+            get { return _boatDAL ?? (_boatDAL = new BoatDAL()); }
+        }
+
 
         public void start()
         {
@@ -110,6 +116,10 @@ namespace _1DV607_WS2.Controller
                         }
                     case 5:
                         {
+                            int memberId = this.menu.getMemberMenu();
+                            BoatBLL boat = this.menu.createBoatMenu(memberId);
+                            SaveBoat(boat);
+                            this.menu.boatCreatedMenu(boat);
                             break;
                         }
                     case 6:
@@ -122,6 +132,10 @@ namespace _1DV607_WS2.Controller
                         }
                     case 8:
                         {
+                            // members = new List<MemberBLL>(1000);
+                            IEnumerable<MemberBLL> members = GetMembers();
+                            this.menu.showMemberList(members);
+
                             break;
                         }
 
@@ -137,10 +151,17 @@ namespace _1DV607_WS2.Controller
             while (true);
         }
 
+// Member part
         public MemberBLL GetMember(MemberBLL member)
         {
             return MemberDAL.GetMember(member);
         }
+
+        public IEnumerable<MemberBLL> GetMembers()
+        {
+            return MemberDAL.GetMembers();
+        }
+
 
         public void SaveMember(MemberBLL member)
         {
@@ -163,6 +184,41 @@ namespace _1DV607_WS2.Controller
         public void DeleteMember(int memberId)
         {
             MemberDAL.DeleteMember(memberId);
+        }
+
+ // Boat part
+        public BoatBLL GetBoat(BoatBLL boat)
+        {
+            return BoatDAL.GetBoat(boat);
+        }
+
+        public IEnumerable<BoatBLL> GetBoats()
+        {
+            return BoatDAL.GetBoats();
+        }
+
+
+        public void SaveBoat(BoatBLL boat)
+        {
+            if (boat == null || boat.MemberId == 0)  // more validations ??
+            {
+                throw new Exception("boat didn't validate correctly");
+            }
+
+            if (GetBoat(boat) != null)
+            {
+                BoatDAL.UpdateBoat(boat);
+            }
+            else
+            {
+                BoatDAL.InsertBoat(boat);
+            }
+        }
+
+
+        public void DeleteBoat(int boatId)
+        {
+            BoatDAL.DeleteBoat(boatId);
         }
 
     }
