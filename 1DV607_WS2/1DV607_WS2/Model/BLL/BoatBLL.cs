@@ -14,7 +14,7 @@ namespace _1DV607_WS2.Model.BLL
 
         public int MemberId { get; set; }
         public BoatType BoatType { get; set; }
-        public int Length { get; set; }
+        public int BoatLength { get; set; }
 
     }
 }

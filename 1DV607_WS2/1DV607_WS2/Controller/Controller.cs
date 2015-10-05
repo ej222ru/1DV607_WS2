@@ -41,6 +41,7 @@ namespace _1DV607_WS2.Controller
                 {
                     case 0:
                         {
+                            
                             return;
                         }
                     case 1:
@@ -116,29 +117,88 @@ namespace _1DV607_WS2.Controller
                         }
                     case 5:
                         {
+
                             int memberId = this.menu.getMemberMenu();
-                            BoatBLL boat = this.menu.createBoatMenu(memberId);
-                            SaveBoat(boat);
-                            this.menu.boatCreatedMenu(boat);
+                            MemberBLL member = new MemberBLL();
+                            member.MemberId = memberId;
+                            member = GetMember(member);
+                            if (member != null)
+                            {
+                                BoatBLL boat = this.menu.createBoatMenu(memberId);
+                                SaveBoat(boat);
+                                this.menu.boatCreatedMenu(boat);
+                            }
+                            else
+                            {
+                                this.menu.boatCreatedMenu(null, false);
+                            }
                             break;
                         }
                     case 6:
                         {
+                            int memberId = this.menu.getMemberMenu();
+
+                            IEnumerable<BoatBLL> boats;
+                            boats = GetBoats(memberId);
+                            BoatBLL boat = this.menu.selectBoatMenu(boats);
+                            if (boat != null)
+                            {
+                                boat = this.menu.updateBoatMenu(boat);
+                                SaveBoat(boat);
+                                boat = GetBoat(boat);
+                                this.menu.boatUpdatedMenu(boat);
+                            }
+                            else
+                            {
+                                BoatBLL voidBoat = new BoatBLL();
+                                voidBoat.MemberId = memberId;
+                                this.menu.boatUpdatedMenu(voidBoat, false);
+                            }
                             break;
                         }
                     case 7:
                         {
+                            int memberId = this.menu.getMemberMenu();
+                            IEnumerable<BoatBLL> boats;
+                            boats = GetBoats(memberId);
+                            BoatBLL boat = this.menu.selectBoatMenu(boats);
+                            if (boat != null)
+                            {
+                                DeleteBoat(boat.BoatId);
+                                boat = GetBoat(boat);
+                                if (boat != null)
+                                    this.menu.boatDeletedMenu(boat, false);
+                                else
+                                    this.menu.boatDeletedMenu(boat);
+                            }
+                            else
+                            {
+                                BoatBLL voidBoat = new BoatBLL();
+                                voidBoat.MemberId = memberId;
+                                this.menu.boatDeletedMenu(boat, false);
+                            }
                             break;
                         }
                     case 8:
                         {
                             // members = new List<MemberBLL>(1000);
                             IEnumerable<MemberBLL> members = GetMembers();
-                            this.menu.showMemberList(members);
+                            IEnumerable<BoatBLL> boats = GetAllBoats();
+                            BoatBLL[] boatArray = boats.Cast<BoatBLL>().ToArray();
+                            this.menu.showMemberList(members, boats);
+                            break;
+                        }
+                    case 9:
+                        {
+                            // members = new List<MemberBLL>(1000);
+                            IEnumerable<MemberBLL> members = GetMembers();
+                            IEnumerable<BoatBLL> boats = GetAllBoats();
+                            BoatBLL[] boatArray = boats.Cast<BoatBLL>().ToArray();
+                            this.menu.showMemberListVerbose(members, boats);
 
                             break;
                         }
-
+                            
                     default:
                         {
                             Debug.Assert(true, "start(): forgot to extend switch case entries?");
@@ -169,8 +229,9 @@ namespace _1DV607_WS2.Controller
             {
                 throw new Exception("member didn't validate correctly");
             }
-
-            if (GetMember(member) != null)
+            MemberBLL oldMember = new MemberBLL();
+            oldMember.MemberId = member.MemberId;
+            if (GetMember(oldMember) != null)
             {
                 MemberDAL.UpdateMember(member);
             }
@@ -192,9 +253,13 @@ namespace _1DV607_WS2.Controller
             return BoatDAL.GetBoat(boat);
         }
 
-        public IEnumerable<BoatBLL> GetBoats()
+        public IEnumerable<BoatBLL> GetBoats(int memberId)
         {
-            return BoatDAL.GetBoats();
+            return BoatDAL.GetBoats(memberId);
+        }
+        public IEnumerable<BoatBLL> GetAllBoats()
+        {
+            return BoatDAL.GetAllBoats();
         }
 
 
@@ -204,8 +269,9 @@ namespace _1DV607_WS2.Controller
             {
                 throw new Exception("boat didn't validate correctly");
             }
-
-            if (GetBoat(boat) != null)
+            BoatBLL oldBoat = new BoatBLL();
+            oldBoat.BoatId = boat.BoatId;
+            if (GetBoat(oldBoat) != null)
             {
                 BoatDAL.UpdateBoat(boat);
             }
