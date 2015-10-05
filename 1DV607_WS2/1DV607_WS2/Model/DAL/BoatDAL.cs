@@ -12,7 +12,7 @@ namespace _1DV607_WS2.Model.DAL
     public class BoatDAL : BaseDAL
     {
 
-        public void InsertBoat(BoatBLL boat)
+        public void insertBoat(BoatBLL boat)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -24,10 +24,14 @@ namespace _1DV607_WS2.Model.DAL
                     cmd.Parameters.Add("@BoatType", SqlDbType.Int, 4).Value = boat.BoatType;
                     cmd.Parameters.Add("@BoatLength", SqlDbType.Int, 4).Value = boat.BoatLength;
                     cmd.Parameters.Add("@MemberId", SqlDbType.Int, 4).Value = boat.MemberId;
+                    cmd.Parameters.Add("@BoatId", SqlDbType.Int).Direction = ParameterDirection.Output;
 
                     conn.Open();
 
                     cmd.ExecuteNonQuery();
+
+                    boat.BoatId = Convert.ToInt32(cmd.Parameters["@BoatId"].Value);
+
                 }
                 catch
                 {
@@ -35,7 +39,7 @@ namespace _1DV607_WS2.Model.DAL
                 }
             }
         }
-        public void UpdateBoat(BoatBLL boat)
+        public void updateBoat(BoatBLL boat)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -58,7 +62,7 @@ namespace _1DV607_WS2.Model.DAL
                 }
             }
         }
-        public void DeleteBoat(int boatId)
+        public void deleteBoat(int boatId)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -110,7 +114,7 @@ namespace _1DV607_WS2.Model.DAL
                 }
             }
         }
-        public IEnumerable<BoatBLL> GetBoats(int memberId)
+        public IEnumerable<BoatBLL> getBoats(int memberId)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -150,7 +154,7 @@ namespace _1DV607_WS2.Model.DAL
             }
         }
 
-        public IEnumerable<BoatBLL> GetAllBoats()
+        public IEnumerable<BoatBLL> getAllBoats()
         {
             using (SqlConnection conn = CreateConnection())
             {

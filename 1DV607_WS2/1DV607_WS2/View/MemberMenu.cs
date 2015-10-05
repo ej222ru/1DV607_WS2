@@ -14,13 +14,12 @@ namespace _1DV607_WS2.View
         {
             this.boatMenu = boatMenu;
         }
-        public MemberBLL createMemberMenu()
+        public MemberBLL createMemberMenu(MemberBLL member)
         {
             string fName = Menu.readLine("First name: ");
             string lName = Menu.readLine("Last name: ");
             string SSN = Menu.readLine("SSN: ");
 
-            MemberBLL member = new MemberBLL();
             member.FirstName = fName;
             member.LastName = lName;
             member.SSN = SSN;

@@ -11,7 +11,7 @@ namespace _1DV607_WS2.Model.DAL
 {
     public class MemberDAL : BaseDAL
     {
-        public void InsertMember(MemberBLL member)
+        public void insertMember(MemberBLL member)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -37,7 +37,7 @@ namespace _1DV607_WS2.Model.DAL
                 }
             }
         }
-        public void UpdateMember(MemberBLL member)
+        public void updateMember(MemberBLL member)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -60,7 +60,7 @@ namespace _1DV607_WS2.Model.DAL
                 }
             }
         }
-        public void DeleteMember(int memberId)
+        public void deleteMember(int memberId)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -79,7 +79,7 @@ namespace _1DV607_WS2.Model.DAL
                 }
             }
         }
-        public MemberBLL GetMember(MemberBLL member)
+        public MemberBLL getMember(MemberBLL member)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -113,7 +113,7 @@ namespace _1DV607_WS2.Model.DAL
             }
         }
 
-        public IEnumerable<MemberBLL> GetMembers()
+        public IEnumerable<MemberBLL> getMembers()
         {
             using (SqlConnection conn = CreateConnection())
             {

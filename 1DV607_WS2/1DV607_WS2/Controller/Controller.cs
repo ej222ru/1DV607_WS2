@@ -46,8 +46,9 @@ namespace _1DV607_WS2.Controller
                         }
                     case 1:
                         {
-                            MemberBLL member = this.menu.createMemberMenu();
-                            SaveMember(member);
+                            MemberBLL member = new MemberBLL();
+                            member = this.menu.createMemberMenu(member);
+                            saveMember(member);
                             this.menu.memberCreatedMenu(member);
 
                             break;
@@ -57,12 +58,12 @@ namespace _1DV607_WS2.Controller
                             int memberId = this.menu.getMemberMenu();
                             MemberBLL member = new MemberBLL();
                             member.MemberId = memberId;
-                            member = GetMember(member);
+                            member = getMember(member);
                             if (member != null)
                             {
                                 member = this.menu.updateMemberMenu(member);
-                                SaveMember(member);
-                                member = GetMember(member);
+                                saveMember(member);
+                                member = getMember(member);
                                 this.menu.memberUpdatedMenu(member);
                             }
                             else
@@ -78,7 +79,7 @@ namespace _1DV607_WS2.Controller
                             int memberId = this.menu.getMemberMenu();
                             MemberBLL member = new MemberBLL();
                             member.MemberId = memberId;
-                            member = GetMember(member);
+                            member = getMember(member);
                             if (member != null)
                             {
                                 this.menu.showMemberMenu(member);
@@ -97,11 +98,11 @@ namespace _1DV607_WS2.Controller
                             int memberId = this.menu.getMemberMenu();
                             MemberBLL member = new MemberBLL();
                             member.MemberId = memberId;
-                            member = GetMember(member);
+                            member = getMember(member);
                             if (member != null)
                             {
-                                DeleteMember(memberId);
-                                member = GetMember(member);
+                                deleteMember(memberId);
+                                member = getMember(member);
                                 if (member != null)
                                     this.menu.memberDeletedMenu(memberId, false);
                                 else
@@ -119,13 +120,14 @@ namespace _1DV607_WS2.Controller
                         {
 
                             int memberId = this.menu.getMemberMenu();
+                            BoatBLL boat = new BoatBLL();
                             MemberBLL member = new MemberBLL();
                             member.MemberId = memberId;
-                            member = GetMember(member);
+                            member = getMember(member);
                             if (member != null)
                             {
-                                BoatBLL boat = this.menu.createBoatMenu(memberId);
-                                SaveBoat(boat);
+                                boat = this.menu.createBoatMenu(memberId, boat);
+                                saveBoat(boat);
                                 this.menu.boatCreatedMenu(boat);
                             }
                             else
@@ -139,16 +141,16 @@ namespace _1DV607_WS2.Controller
                             int memberId = this.menu.getMemberMenu();
                             MemberBLL member = new MemberBLL();
                             member.MemberId = memberId;
-                            member = GetMember(member);
+                            member = getMember(member);
                             if (member != null)
                             {
                                 IEnumerable<BoatBLL> boats;
-                                boats = GetBoats(memberId);
+                                boats = getBoats(memberId);
                                 BoatBLL boat = this.menu.selectBoatMenu(boats);
                                 if (boat != null)
                                 {
                                     boat = this.menu.updateBoatMenu(boat);
-                                    SaveBoat(boat);
+                                    saveBoat(boat);
                                     boat = GetBoat(boat);
                                     this.menu.boatUpdatedMenu(boat);
                                 }
@@ -172,15 +174,15 @@ namespace _1DV607_WS2.Controller
                             int memberId = this.menu.getMemberMenu();
                             MemberBLL member = new MemberBLL();
                             member.MemberId = memberId;
-                            member = GetMember(member);
+                            member = getMember(member);
                             if (member != null)
                             {
                                 IEnumerable<BoatBLL> boats;
-                                boats = GetBoats(memberId);
+                                boats = getBoats(memberId);
                                 BoatBLL boat = this.menu.selectBoatMenu(boats);
                                 if (boat != null)
                                 {
-                                    DeleteBoat(boat.BoatId);
+                                    deleteBoat(boat.BoatId);
                                     boat = GetBoat(boat);
                                     if (boat != null)
                                         this.menu.boatDeletedMenu(boat, false);
@@ -205,8 +207,8 @@ namespace _1DV607_WS2.Controller
                     case 8:
                         {
                             // members = new List<MemberBLL>(1000);
-                            IEnumerable<MemberBLL> members = GetMembers();
-                            IEnumerable<BoatBLL> boats = GetAllBoats();
+                            IEnumerable<MemberBLL> members = getMembers();
+                            IEnumerable<BoatBLL> boats = getAllBoats();
                             BoatBLL[] boatArray = boats.Cast<BoatBLL>().ToArray();
                             this.menu.showMemberList(members, boats);
                             break;
@@ -214,8 +216,8 @@ namespace _1DV607_WS2.Controller
                     case 9:
                         {
                             // members = new List<MemberBLL>(1000);
-                            IEnumerable<MemberBLL> members = GetMembers();
-                            IEnumerable<BoatBLL> boats = GetAllBoats();
+                            IEnumerable<MemberBLL> members = getMembers();
+                            IEnumerable<BoatBLL> boats = getAllBoats();
                             BoatBLL[] boatArray = boats.Cast<BoatBLL>().ToArray();
                             this.menu.showMemberListVerbose(members, boats);
 
@@ -235,18 +237,18 @@ namespace _1DV607_WS2.Controller
         }
 
 // Member part
-        public MemberBLL GetMember(MemberBLL member)
+        public MemberBLL getMember(MemberBLL member)
         {
-            return MemberDAL.GetMember(member);
+            return MemberDAL.getMember(member);
         }
 
-        public IEnumerable<MemberBLL> GetMembers()
+        public IEnumerable<MemberBLL> getMembers()
         {
-            return MemberDAL.GetMembers();
+            return MemberDAL.getMembers();
         }
 
 
-        public void SaveMember(MemberBLL member)
+        public void saveMember(MemberBLL member)
         {
             if (member == null || member.SSN == null)  // more validations ??
             {
@@ -254,20 +256,20 @@ namespace _1DV607_WS2.Controller
             }
             MemberBLL oldMember = new MemberBLL();
             oldMember.MemberId = member.MemberId;
-            if (GetMember(oldMember) != null)
+            if (getMember(oldMember) != null)
             {
-                MemberDAL.UpdateMember(member);
+                MemberDAL.updateMember(member);
             }
             else
             {
-                MemberDAL.InsertMember(member);
+                MemberDAL.insertMember(member);
             }
         }
 
 
-        public void DeleteMember(int memberId)
+        public void deleteMember(int memberId)
         {
-            MemberDAL.DeleteMember(memberId);
+            MemberDAL.deleteMember(memberId);
         }
 
  // Boat part
@@ -276,17 +278,17 @@ namespace _1DV607_WS2.Controller
             return BoatDAL.GetBoat(boat);
         }
 
-        public IEnumerable<BoatBLL> GetBoats(int memberId)
+        public IEnumerable<BoatBLL> getBoats(int memberId)
         {
-            return BoatDAL.GetBoats(memberId);
+            return BoatDAL.getBoats(memberId);
         }
-        public IEnumerable<BoatBLL> GetAllBoats()
+        public IEnumerable<BoatBLL> getAllBoats()
         {
-            return BoatDAL.GetAllBoats();
+            return BoatDAL.getAllBoats();
         }
 
 
-        public void SaveBoat(BoatBLL boat)
+        public void saveBoat(BoatBLL boat)
         {
             if (boat == null || boat.MemberId == 0)  // more validations ??
             {
@@ -296,18 +298,18 @@ namespace _1DV607_WS2.Controller
             oldBoat.BoatId = boat.BoatId;
             if (GetBoat(oldBoat) != null)
             {
-                BoatDAL.UpdateBoat(boat);
+                BoatDAL.updateBoat(boat);
             }
             else
             {
-                BoatDAL.InsertBoat(boat);
+                BoatDAL.insertBoat(boat);
             }
         }
 
 
-        public void DeleteBoat(int boatId)
+        public void deleteBoat(int boatId)
         {
-            BoatDAL.DeleteBoat(boatId);
+            BoatDAL.deleteBoat(boatId);
         }
 
     }

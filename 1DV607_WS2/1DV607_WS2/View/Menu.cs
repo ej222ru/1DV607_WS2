@@ -105,9 +105,9 @@ namespace _1DV607_WS2.View
         }
 
 //********************* Boat stuff 
-        public BoatBLL createBoatMenu(int memberId)
+        public BoatBLL createBoatMenu(int memberId, BoatBLL boat)
         {
-            return boatMenu.createBoatMenu(memberId);
+            return boatMenu.createBoatMenu(memberId, boat);
         }
 
         public BoatBLL selectBoatMenu(IEnumerable<BoatBLL> boats)
@@ -135,9 +135,9 @@ namespace _1DV607_WS2.View
         }
 
 //***************** Member stuff
-        public MemberBLL createMemberMenu()
+        public MemberBLL createMemberMenu(MemberBLL member)
         {
-            return memberMenu.createMemberMenu();
+            return memberMenu.createMemberMenu(member);
         }
         public int getMemberMenu()
         {

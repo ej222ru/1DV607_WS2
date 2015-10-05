@@ -9,12 +9,11 @@ namespace _1DV607_WS2.View
 {
     public class BoatMenu
     {
-        public BoatBLL createBoatMenu(int memberId)
+        public BoatBLL createBoatMenu(int memberId, BoatBLL boat)
         {
             BoatType boatType = createBoatTypeMenu();
             int length = (int)Menu.readInt("Boat length: ");
 
-            BoatBLL boat = new BoatBLL();
             boat.MemberId = memberId;
             boat.BoatType = boatType;
             boat.BoatLength = length;
@@ -30,6 +29,7 @@ namespace _1DV607_WS2.View
             bool done = true;
             do
             {
+                done = true;
                 ConsoleKeyInfo cki;
                 Console.WriteLine("");
                 Console.WriteLine("select boat type: ");
@@ -245,19 +245,6 @@ namespace _1DV607_WS2.View
             }
             Menu.pressKeyToContinue();
         }
-        public void boatDeletedMenu(int boatId, bool succeeded = true)
-        {
-            if (succeeded)
-            {
-                Console.WriteLine("****  boat deleted ****\n");
-                Console.WriteLine("Boat Id:  " + boatId);
-            }
-            else
-            {
-                Console.WriteLine("****  Boat could not be deleted ****\n");
-                Console.WriteLine("Boat Id:  " + boatId);
-            }
-            Menu.pressKeyToContinue();
-        }
+
     }
 }
