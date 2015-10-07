@@ -26,20 +26,20 @@ namespace _1DV607_WS2.View
                 {
                     Console.Clear();
                     Console.WriteLine("");
-                    Console.WriteLine("Välj funktion: ");
-                    Console.WriteLine("  1   -  skapa en medlem");
-                    Console.WriteLine("  2  -   uppdatera medlem");
-                    Console.WriteLine("  3  -   visa medlem");
-                    Console.WriteLine("  4   -  ta bort medlem");
+                    Console.WriteLine("Select function: ");
+                    Console.WriteLine("  1   -  create a member");
+                    Console.WriteLine("  2  -   update member");
+                    Console.WriteLine("  3  -   view member");
+                    Console.WriteLine("  4   -  delete member");
                     Console.WriteLine("");
-                    Console.WriteLine("  5   -  lägg till båt");
-                    Console.WriteLine("  6   -  uppdatera båt");
-                    Console.WriteLine("  7   -  ta bort båt");
+                    Console.WriteLine("  5   -  register boat");
+                    Console.WriteLine("  6   -  update boat");
+                    Console.WriteLine("  7   -  delete boat");
                     Console.WriteLine("");
-                    Console.WriteLine("  8   -  om du vill lista medlemmar");
-                    Console.WriteLine("  9   -  om du vill lista medlemmar utförligt");
+                    Console.WriteLine("  8   -  list members");
+                    Console.WriteLine("  9   -  list members verbose");
                     Console.WriteLine("");
-                    Console.WriteLine("  Esc - avslutar.");
+                    Console.WriteLine("  Esc - end session.");
                     Console.WriteLine("");
                     cki = Console.ReadKey(true);
                     Console.Clear();
@@ -87,7 +87,7 @@ namespace _1DV607_WS2.View
                             }
                         default :
                             {
-                                Console.WriteLine("Du måste välja ett tillgängligt menyalternativ <1-8> eller ESC");
+                                Console.WriteLine("Select available menu option <1-9> or ESC");
                                 pressKeyToContinue();
                                 break;
                             };

@@ -39,12 +39,12 @@ namespace _1DV607_WS2.Controller
                 menuChoice = this.menu.mainMenu();
                 switch (menuChoice)
                 {
-                    case 0:
+                    case 0:  // ESC  terminate
                         {
                             
                             return;
                         }
-                    case 1:
+                    case 1: //create a member
                         {
                             MemberBLL member = new MemberBLL();
                             member = this.menu.createMemberMenu(member);
@@ -53,7 +53,7 @@ namespace _1DV607_WS2.Controller
 
                             break;
                         }
-                    case 2:
+                    case 2: // update member
                         {
                             int memberId = this.menu.getMemberMenu();
                             MemberBLL member = new MemberBLL();
@@ -74,7 +74,7 @@ namespace _1DV607_WS2.Controller
                             }
                             break;
                         }
-                    case 3:
+                    case 3: // view member
                         {
                             int memberId = this.menu.getMemberMenu();
                             MemberBLL member = new MemberBLL();
@@ -92,7 +92,7 @@ namespace _1DV607_WS2.Controller
                             }
                             break;
                         }
-                    case 4:
+                    case 4: // delete member
                         {
 
                             int memberId = this.menu.getMemberMenu();
@@ -116,7 +116,7 @@ namespace _1DV607_WS2.Controller
                             }
                             break;
                         }
-                    case 5:
+                    case 5: // register boat
                         {
 
                             int memberId = this.menu.getMemberMenu();
@@ -136,7 +136,7 @@ namespace _1DV607_WS2.Controller
                             }
                             break;
                         }
-                    case 6:
+                    case 6: // update boat
                         {
                             int memberId = this.menu.getMemberMenu();
                             MemberBLL member = new MemberBLL();
@@ -169,7 +169,7 @@ namespace _1DV607_WS2.Controller
                             }
                             break;
                         }
-                    case 7:
+                    case 7: // delete boat
                         {
                             int memberId = this.menu.getMemberMenu();
                             MemberBLL member = new MemberBLL();
@@ -204,18 +204,16 @@ namespace _1DV607_WS2.Controller
                             }
                             break;
                         }
-                    case 8:
+                    case 8: // list members
                         {
-                            // members = new List<MemberBLL>(1000);
                             IEnumerable<MemberBLL> members = getMembers();
                             IEnumerable<BoatBLL> boats = getAllBoats();
                             BoatBLL[] boatArray = boats.Cast<BoatBLL>().ToArray();
                             this.menu.showMemberList(members, boats);
                             break;
                         }
-                    case 9:
+                    case 9: // list members verbose
                         {
-                            // members = new List<MemberBLL>(1000);
                             IEnumerable<MemberBLL> members = getMembers();
                             IEnumerable<BoatBLL> boats = getAllBoats();
                             BoatBLL[] boatArray = boats.Cast<BoatBLL>().ToArray();

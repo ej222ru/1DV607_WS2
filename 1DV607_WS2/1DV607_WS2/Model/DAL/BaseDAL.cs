@@ -11,6 +11,7 @@ using System.Web;
 namespace _1DV607_WS2.Model.DAL
 {
 
+    // Creates a DB connection
     public abstract class BaseDAL
     {
         private static string _connectionString;

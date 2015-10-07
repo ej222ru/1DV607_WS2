@@ -8,8 +8,7 @@ namespace _1DV607_WS2.Model.BLL
 {
     public class MemberBLL
     {
-        // Egenskapernas namn och typ ges av tabellen
-        // Member i databasen.
+        // corresponds to Member records in the Database
         public int MemberId { get; set; }
         public string SSN { get; set; }
         public string FirstName { get; set; }

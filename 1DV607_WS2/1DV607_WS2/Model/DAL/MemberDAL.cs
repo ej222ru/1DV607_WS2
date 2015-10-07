@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace _1DV607_WS2.Model.DAL
 {
+    // DB access to Member records of type MemberBLL
+
     public class MemberDAL : BaseDAL
     {
         public void insertMember(MemberBLL member)

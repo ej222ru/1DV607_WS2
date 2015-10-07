@@ -8,6 +8,8 @@ public enum BoatType {Sailboat=1, Motorsailer, kayak_Canoe, Other};
 
 namespace _1DV607_WS2.Model.BLL
 {
+
+    // corresponds to Boat records in the Database
     public class BoatBLL
     {
         public int BoatId { get; set; }

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace _1DV607_WS2.Model.DAL
 {
+
+
+    // DB access to Boat records of type BoatBLL
     public class BoatDAL : BaseDAL
     {
 
