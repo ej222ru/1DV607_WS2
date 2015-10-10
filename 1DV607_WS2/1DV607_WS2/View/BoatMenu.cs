@@ -9,10 +9,10 @@ namespace _1DV607_WS2.View
 {
     public class BoatMenu
     {
-        public BoatBLL createBoatMenu(int memberId, BoatBLL boat)
+        public BoatBLL CreateBoatMenu(int memberId, BoatBLL boat)
         {
-            BoatType boatType = createBoatTypeMenu();
-            int length = (int)Menu.readInt("Boat length: ");
+            BoatType boatType = CreateBoatTypeMenu();
+            int length = (int)Menu.ReadInt("Boat length: ");
 
             boat.MemberId = memberId;
             boat.BoatType = boatType;
@@ -22,7 +22,7 @@ namespace _1DV607_WS2.View
         }
 
 
-        public BoatType createBoatTypeMenu()
+        public BoatType CreateBoatTypeMenu()
         {
 // public enum BoatType {Sailboat=1, Motorsailer, kayak_Canoe, Other};
             BoatType ret = 0;
@@ -66,7 +66,7 @@ namespace _1DV607_WS2.View
                     default :
                         {
                             Console.WriteLine("You have to select a menualternative <1-4>");
-                            Menu.pressKeyToContinue();
+                            Menu.PressKeyToContinue();
                             done = false;
                             break;
                         };
@@ -76,7 +76,7 @@ namespace _1DV607_WS2.View
 
             return ret;
         }
-        private string translateBoatType(BoatType boatType)
+        private string TranslateBoatType(BoatType boatType)
         {
             string ret="";
             switch (boatType)
@@ -105,18 +105,18 @@ namespace _1DV607_WS2.View
             return ret;
         }
 
-        public void showBoat(BoatBLL boat)
+        public void ShowBoat(BoatBLL boat)
         {
             Console.WriteLine("Boat Id: " + boat.BoatId);
             Console.WriteLine("Member Id: " + boat.MemberId);
-            Console.WriteLine("BoatType: " + translateBoatType(boat.BoatType));
+            Console.WriteLine("BoatType: " + TranslateBoatType(boat.BoatType));
             Console.WriteLine("BoatLength: " + boat.BoatLength);
         }
-        public void showBoatRow(BoatBLL boat, int index)
+        public void ShowBoatRow(BoatBLL boat, int index)
         {
-            Console.WriteLine("  " + index + "   -  " + "BoatId: " + boat.BoatId + "  MemberId: " + boat.MemberId + "  BoatType: " + translateBoatType(boat.BoatType) + "  Boat length: " + boat.BoatLength);
+            Console.WriteLine("  " + index + "   -  " + "BoatId: " + boat.BoatId + "  MemberId: " + boat.MemberId + "  BoatType: " + TranslateBoatType(boat.BoatType) + "  Boat length: " + boat.BoatLength);
         }
-        public BoatBLL selectBoatMenu(IEnumerable<BoatBLL> boats)
+        public BoatBLL SelectBoatMenu(IEnumerable<BoatBLL> boats)
         {
             bool done = false;
             int ret = 0;
@@ -130,7 +130,7 @@ namespace _1DV607_WS2.View
                 int index = 1;
                 foreach (BoatBLL boat in boats)
                 {
-                    showBoatRow(boat, index++);
+                    ShowBoatRow(boat, index++);
                 }
                 cki = Console.ReadKey(true);
                 Console.Clear();
@@ -140,30 +140,30 @@ namespace _1DV607_WS2.View
                 else
                 {
                     Console.WriteLine("You must select a valid value");
-                    Menu.pressKeyToContinue();
+                    Menu.PressKeyToContinue();
                 }
             }
             while (!done);
 
             return boatArray[ret-1];
         }
-        public BoatBLL updateBoatMenu(BoatBLL boat)
+        public BoatBLL UpdateBoatMenu(BoatBLL boat)
         {
             Console.WriteLine("Just press ENTER for fields you don't want to change");
 
-            int? memberId = Menu.readInt("memberId: ", false);
+            int? memberId = Menu.ReadInt("memberId: ", false);
             int? boatType;
 
             bool done = false;
             do
             {
-                Console.WriteLine("press 1 for " + translateBoatType(BoatType.Sailboat));
-                Console.WriteLine("press 2 for " + translateBoatType(BoatType.Motorsailer));
-                Console.WriteLine("press 3 for " + translateBoatType(BoatType.kayak_Canoe));
-                Console.WriteLine("press 4 for " + translateBoatType(BoatType.Other));
+                Console.WriteLine("press 1 for " + TranslateBoatType(BoatType.Sailboat));
+                Console.WriteLine("press 2 for " + TranslateBoatType(BoatType.Motorsailer));
+                Console.WriteLine("press 3 for " + TranslateBoatType(BoatType.kayak_Canoe));
+                Console.WriteLine("press 4 for " + TranslateBoatType(BoatType.Other));
                 Console.WriteLine("or ENTER to leave it unchanged ");
 
-                boatType = Menu.readInt("Boat Type: ", false);
+                boatType = Menu.ReadInt("Boat Type: ", false);
                 if (boatType > 0 && boatType < 5 || boatType == null)
                 {
                     done = true;
@@ -171,12 +171,12 @@ namespace _1DV607_WS2.View
                 else
                 {
                     Console.WriteLine("You have to select a menualternative <1-4>");
-                    Menu.pressKeyToContinue();
+                    Menu.PressKeyToContinue();
                 }
             }
             while (!done);
 
-            int?  boatLength = Menu.readInt("Boat length: ", false);
+            int?  boatLength = Menu.ReadInt("Boat length: ", false);
             if (memberId != null)
                 boat.MemberId = (int)memberId;
             if (boatType != null)
@@ -187,26 +187,26 @@ namespace _1DV607_WS2.View
         }
 
 //****************
-        public void boatCreatedMenu(BoatBLL boat, bool succeeded = true)
+        public void BoatCreatedMenu(BoatBLL boat, bool succeeded = true)
         {
             if (succeeded)
             {
                 Console.WriteLine("****  You registered a boat ****\n");
-                showBoat(boat);
+                ShowBoat(boat);
             }
             else
             {
                 Console.WriteLine("****  Boat could not be registered ****\n");
 
             }
-            Menu.pressKeyToContinue();
+            Menu.PressKeyToContinue();
         }
-        public void boatUpdatedMenu(BoatBLL boat, bool succeeded = true)
+        public void BoatUpdatedMenu(BoatBLL boat, bool succeeded = true)
         {
             if (succeeded)
             {
                 Console.WriteLine("****  You updated a boat ****\n");
-                showBoat(boat);
+                ShowBoat(boat);
             }
             else
             {
@@ -214,28 +214,35 @@ namespace _1DV607_WS2.View
                 Console.WriteLine("MemberId: " + boat.MemberId + "  BoatId: " + boat.BoatId);
 
             }
-            Menu.pressKeyToContinue();
+            Menu.PressKeyToContinue();
         }
-        public void boatDeletedMenu(BoatBLL boat, bool succeeded = true)
+        public void BoatDeletedMenu(BoatBLL boat, MemberBLL member, bool succeeded = true)
         {
             if (succeeded)
             {
                 Console.WriteLine("****  You deleted a boat ****\n");
+                Console.WriteLine("For MemberSSN: " + member.SSN);
             }
             else
             {
                 Console.WriteLine("****  Boat delete failed ****\n");
-                Console.WriteLine("MemberId: " + boat.MemberId + "  BoatId: " + boat.BoatId);
-
+                if (boat.BoatId == 0)
+                {
+                    Console.WriteLine("MemberSSN: " + member.SSN + " doesn't have a boat registered ");
+                }
+                else
+                {
+                    Console.WriteLine("MemberSSN: " + member.SSN + "  BoatId: " + boat.BoatId);
+                }
             }
-            Menu.pressKeyToContinue();
+            Menu.PressKeyToContinue();
         }
-        public void showBoatMenu(BoatBLL boat, bool succeeded = true)
+        public void ShowBoatMenu(BoatBLL boat, bool succeeded = true)
         {
             if (succeeded)
             {
                 Console.WriteLine("****  boat ****\n");
-                showBoat(boat);
+                ShowBoat(boat);
             }
             else
             {
@@ -243,7 +250,7 @@ namespace _1DV607_WS2.View
                 Console.WriteLine("Member Id:  " + boat.MemberId + "Boat Id:" + boat.BoatId);
 
             }
-            Menu.pressKeyToContinue();
+            Menu.PressKeyToContinue();
         }
 
     }

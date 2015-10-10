@@ -15,7 +15,7 @@ namespace _1DV607_WS2.Model.DAL
     public class BoatDAL : BaseDAL
     {
 
-        public void insertBoat(BoatBLL boat)
+        public void InsertBoat(BoatBLL boat)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -42,7 +42,7 @@ namespace _1DV607_WS2.Model.DAL
                 }
             }
         }
-        public void updateBoat(BoatBLL boat)
+        public void UpdateBoat(BoatBLL boat)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -65,7 +65,7 @@ namespace _1DV607_WS2.Model.DAL
                 }
             }
         }
-        public void deleteBoat(int boatId)
+        public void DeleteBoat(int boatId)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -117,7 +117,7 @@ namespace _1DV607_WS2.Model.DAL
                 }
             }
         }
-        public IEnumerable<BoatBLL> getBoats(int memberId)
+        public IEnumerable<BoatBLL> GetBoats(int memberId)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -157,7 +157,7 @@ namespace _1DV607_WS2.Model.DAL
             }
         }
 
-        public IEnumerable<BoatBLL> getAllBoats()
+        public IEnumerable<BoatBLL> GetAllBoats()
         {
             using (SqlConnection conn = CreateConnection())
             {

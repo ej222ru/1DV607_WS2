@@ -88,7 +88,7 @@ namespace _1DV607_WS2.View
                         default :
                             {
                                 Console.WriteLine("Select available menu option <1-9> or ESC");
-                                pressKeyToContinue();
+                                PressKeyToContinue();
                                 break;
                             };
 
@@ -105,107 +105,107 @@ namespace _1DV607_WS2.View
         }
 
 //********************* Boat stuff 
-        public BoatBLL createBoatMenu(int memberId, BoatBLL boat)
+        public BoatBLL CreateBoatMenu(int memberId, BoatBLL boat)
         {
-            return boatMenu.createBoatMenu(memberId, boat);
+            return boatMenu.CreateBoatMenu(memberId, boat);
         }
 
-        public BoatBLL selectBoatMenu(IEnumerable<BoatBLL> boats)
+        public BoatBLL SelectBoatMenu(IEnumerable<BoatBLL> boats)
         {
-            return boatMenu.selectBoatMenu(boats);
+            return boatMenu.SelectBoatMenu(boats);
         }
 
-        public BoatBLL updateBoatMenu(BoatBLL boat)
+        public BoatBLL UpdateBoatMenu(BoatBLL boat)
         {
-            boatMenu.showBoat(boat);
-            return boatMenu.updateBoatMenu(boat);
+            boatMenu.ShowBoat(boat);
+            return boatMenu.UpdateBoatMenu(boat);
         }
 
-        public void boatCreatedMenu(BoatBLL boat, bool succeeded = true)
+        public void BoatCreatedMenu(BoatBLL boat, bool succeeded = true)
         {
-            boatMenu.boatCreatedMenu(boat, succeeded);
+            boatMenu.BoatCreatedMenu(boat, succeeded);
         }
-        public void boatUpdatedMenu(BoatBLL boat, bool succeeded = true)
+        public void BoatUpdatedMenu(BoatBLL boat, bool succeeded = true)
         {
-            boatMenu.boatUpdatedMenu(boat, succeeded);
+            boatMenu.BoatUpdatedMenu(boat, succeeded);
         }
-        public void boatDeletedMenu(BoatBLL boat, bool succeeded = true)
+        public void BoatDeletedMenu(BoatBLL boat, MemberBLL member, bool succeeded = true)
         {
-            boatMenu.boatDeletedMenu(boat, succeeded);
+            boatMenu.BoatDeletedMenu(boat, member, succeeded);
         }
 
 //***************** Member stuff
-        public MemberBLL createMemberMenu(MemberBLL member)
+        public MemberBLL CreateMemberMenu(MemberBLL member)
         {
-            return memberMenu.createMemberMenu(member);
+            return memberMenu.CreateMemberMenu(member);
         }
-        public int getMemberMenu()
+        public string GetMemberMenu()
         {
-            return memberMenu.getMemberMenu();
+            return memberMenu.GetMemberMenu();
         }
-        public MemberBLL updateMemberMenu(MemberBLL member)
+        public MemberBLL UpdateMemberMenu(MemberBLL member)
         {
-            return memberMenu.updateMemberMenu(member);
+            return memberMenu.UpdateMemberMenu(member);
         }
-        public void showMemberList(IEnumerable<MemberBLL> members, IEnumerable<BoatBLL> boats)
+        public void ShowMemberList(IEnumerable<MemberBLL> members, IEnumerable<BoatBLL> boats)
         {
-            memberMenu.showMemberList(members, boats);
+            memberMenu.ShowMemberList(members, boats);
         }
-        public void showMemberListVerbose(IEnumerable<MemberBLL> members, IEnumerable<BoatBLL> boats)
+        public void ShowMemberListVerbose(IEnumerable<MemberBLL> members, IEnumerable<BoatBLL> boats)
         {
-            memberMenu.showMemberListVerbose(members, boats);
+            memberMenu.ShowMemberListVerbose(members, boats);
         }
 
 
-        public void memberCreatedMenu(MemberBLL member)
+        public void MemberCreatedMenu(MemberBLL member)
         {
             Console.WriteLine("****  You created member ****\n");
-            memberMenu.showMember(member);
-            pressKeyToContinue();
+            memberMenu.ShowMember(member);
+            PressKeyToContinue();
         }
-        public void memberUpdatedMenu(MemberBLL member, bool succeeded = true)
+        public void MemberUpdatedMenu(MemberBLL member, bool succeeded = true)
         {
             if (succeeded)
             {
                 Console.WriteLine("****  You updated member ****\n");
-                memberMenu.showMember(member);
+                memberMenu.ShowMember(member);
             }
             else
             {
                 Console.WriteLine("****  Member update failed ****\n");
-                Console.WriteLine("Member Id:  " + member.MemberId);
+                Console.WriteLine("Member SSN:  " + member.SSN);
 
             }
-            pressKeyToContinue();
+            PressKeyToContinue();
         }
-        public void showMemberMenu(MemberBLL member, bool succeeded = true)
+        public void ShowMemberMenu(MemberBLL member, bool succeeded = true)
         {
             if (succeeded)
             {
                 Console.WriteLine("****  member ****\n");
-                memberMenu.showMember(member);
+                memberMenu.ShowMember(member);
             }
             else
             {
                 Console.WriteLine("****  Member info not found ****\n");
-                Console.WriteLine("Member Id:  " + member.MemberId);
+                Console.WriteLine("Member SSN:  " + member.SSN);
 
             }
-            pressKeyToContinue();
+            PressKeyToContinue();
         }
-        public void memberDeletedMenu(int memberId, bool succeeded = true)
+        public void MemberDeletedMenu(string SSN, bool succeeded = true)
         {
             if (succeeded)
             {
                 Console.WriteLine("****  member deleted ****\n");
-                Console.WriteLine("Member Id:  " + memberId);
+                Console.WriteLine("Member SSN:  " + SSN);
             }
             else
             {
                 Console.WriteLine("****  Member could not be deleted ****\n");
-                Console.WriteLine("Member Id:  " + memberId);
+                Console.WriteLine("Member SSN:  " + SSN);
             }
-            pressKeyToContinue();
+            PressKeyToContinue();
         }
 
 
@@ -216,7 +216,7 @@ namespace _1DV607_WS2.View
         /* 
          *  A few generic help methods
          */
-        public static string readLine(string text, bool mandatory = true)
+        public static string ReadLine(string text, bool mandatory = true)
         {
             bool done = false;
             String input;
@@ -229,7 +229,7 @@ namespace _1DV607_WS2.View
                 if (mandatory && String.IsNullOrWhiteSpace(input))
                 {
                     Console.Write("You have to enter something!");
-                    pressKeyToContinue();
+                    PressKeyToContinue();
                 }
                 else
                 {
@@ -240,7 +240,7 @@ namespace _1DV607_WS2.View
             return input;
         }
 
-        public static int? readInt(string text, bool mandatory = true)
+        public static int? ReadInt(string text, bool mandatory = true)
         {
             int intInput;
             int? ret = null;
@@ -248,7 +248,7 @@ namespace _1DV607_WS2.View
             String input;
             do
             {
-                input = readLine(text, mandatory);
+                input = ReadLine(text, mandatory);
 
                 if (Int32.TryParse(input, out intInput))
                 {
@@ -260,7 +260,7 @@ namespace _1DV607_WS2.View
                     if (mandatory)
                     {
                         Console.Write("You have to enter an integer number!");
-                        pressKeyToContinue();
+                        PressKeyToContinue();
                     }
                     else if (String.IsNullOrWhiteSpace(input))
                     {
@@ -274,7 +274,7 @@ namespace _1DV607_WS2.View
             return ret;
         }
 
-        public static void pressKeyToContinue()
+        public static void PressKeyToContinue()
         {
             Console.WriteLine("");
             Console.WriteLine("Press any key to continue");

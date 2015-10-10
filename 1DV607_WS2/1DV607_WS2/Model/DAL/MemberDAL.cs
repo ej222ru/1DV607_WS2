@@ -13,7 +13,7 @@ namespace _1DV607_WS2.Model.DAL
 
     public class MemberDAL : BaseDAL
     {
-        public void insertMember(MemberBLL member)
+        public void IinsertMember(MemberBLL member)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -39,7 +39,7 @@ namespace _1DV607_WS2.Model.DAL
                 }
             }
         }
-        public void updateMember(MemberBLL member)
+        public void UpdateMember(MemberBLL member)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -62,7 +62,7 @@ namespace _1DV607_WS2.Model.DAL
                 }
             }
         }
-        public void deleteMember(int memberId)
+        public void DeleteMember(string SSN)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -70,7 +70,7 @@ namespace _1DV607_WS2.Model.DAL
                 {
                     SqlCommand cmd = new SqlCommand("appSchema.uspDeleteMember", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MemberId", SqlDbType.Int, 4).Value = memberId;
+                    cmd.Parameters.Add("@SSN", SqlDbType.VarChar, 12).Value = SSN;
                     conn.Open();
 
                     cmd.ExecuteNonQuery();
@@ -81,7 +81,7 @@ namespace _1DV607_WS2.Model.DAL
                 }
             }
         }
-        public MemberBLL getMember(MemberBLL member)
+        public MemberBLL GetMember(MemberBLL member)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -89,7 +89,7 @@ namespace _1DV607_WS2.Model.DAL
                 {
                     SqlCommand cmd = new SqlCommand("appSchema.uspGetMember", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MemberId", SqlDbType.Int, 4).Value = member.MemberId;
+                    cmd.Parameters.Add("@SSN", SqlDbType.VarChar, 12).Value = member.SSN;
                     conn.Open();
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -98,11 +98,11 @@ namespace _1DV607_WS2.Model.DAL
                         {
                             int FirstNameIndex  = reader.GetOrdinal("FirstName");
                             int LastNameIndex   = reader.GetOrdinal("LastName");
-                            int SSNIndex        = reader.GetOrdinal("SSN");
+                            int MemberIdIndex = reader.GetOrdinal("MemberId");
 
                             member.FirstName    = reader.GetString(FirstNameIndex);
                             member.LastName     = reader.GetString(LastNameIndex);
-                            member.SSN          = reader.GetString(SSNIndex);
+                            member.MemberId     = reader.GetInt32(MemberIdIndex);
                             return member;
                         }
                     }
@@ -115,7 +115,7 @@ namespace _1DV607_WS2.Model.DAL
             }
         }
 
-        public IEnumerable<MemberBLL> getMembers()
+        public IEnumerable<MemberBLL> GetMembers()
         {
             using (SqlConnection conn = CreateConnection())
             {

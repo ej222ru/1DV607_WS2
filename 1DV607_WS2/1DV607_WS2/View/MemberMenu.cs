@@ -14,66 +14,78 @@ namespace _1DV607_WS2.View
         {
             this.boatMenu = boatMenu;
         }
-        public MemberBLL createMemberMenu(MemberBLL member)
+        public MemberBLL CreateMemberMenu(MemberBLL member)
         {
-            string fName = Menu.readLine("First name: ");
-            string lName = Menu.readLine("Last name: ");
-            string SSN = Menu.readLine("SSN: ");
-
+            Boolean done = false;
+            string fName = Menu.ReadLine("First name: ");
+            string lName = Menu.ReadLine("Last name: ");
+            string SSN = "";
+            while (!done)
+            {
+                SSN = Menu.ReadLine("SSN (YYYYMMDDnnnn): ");
+                if (SSN.Length < 12)
+                {
+                    Console.Write("SSN has to be 12 characters long and in the format YYYYMMDDnnnn");
+                }
+                else
+                {
+                    done = true;
+                }
+            }
             member.FirstName = fName;
             member.LastName = lName;
             member.SSN = SSN;
 
             return member;
         }
-        public int getMemberMenu()
+        public String GetMemberMenu()
         {
-            int memberId;
             bool done = false;
-            String input;
+            String SSN="";
             do
             {
-                input = Menu.readLine("Enter member id: ");
-                if (Int32.TryParse(input, out memberId))
-                    done = true;
-                else
+                while (!done)
                 {
-                    Console.Write("You have to enter member id as intger numbers!");
-                    Menu.pressKeyToContinue();
+                    SSN = Menu.ReadLine("Enter member SSN (YYYYMMDDnnnn): ");
+                    if (SSN.Length < 12)
+                    {
+                        Console.Write("SSN has to be 12 characters long and in the format YYYYMMDDnnnn");
+                        Menu.PressKeyToContinue();
+                    }
+                    else
+                    {
+                        done = true;
+                    }
                 }
             }
             while (!done);
 
-            return memberId;
+            return SSN;
         }
-        public MemberBLL updateMemberMenu(MemberBLL member)
+        public MemberBLL UpdateMemberMenu(MemberBLL member)
         {
             Console.WriteLine("First name: " + member.FirstName);
             Console.WriteLine("Last name: " + member.LastName);
-            Console.WriteLine("SSN: " + member.SSN);
 
             Console.WriteLine("Just press ENTER for fields you don't want to change");
 
-            string fName    = Menu.readLine("First name: ", false);
-            string lName    = Menu.readLine("Last name: ", false);
-            string SSN      = Menu.readLine("SSN: ", false);
+            string fName    = Menu.ReadLine("First name: ", false);
+            string lName    = Menu.ReadLine("Last name: ", false);
             if (fName != "")
                 member.FirstName = fName;
             if (lName != "")
                 member.LastName = lName;
-            if (SSN != "")
-                member.SSN = SSN;
             return member;
         }
 
-        public void showMember(MemberBLL member)
+        public void ShowMember(MemberBLL member)
         {
             Console.WriteLine("Member Id:  " + member.MemberId);
             Console.WriteLine("First name: " + member.FirstName);
             Console.WriteLine("Last name:  " + member.LastName);
             Console.WriteLine("SSN:        " + member.SSN);
         }
-        public void showMemberList(IEnumerable<MemberBLL> members, IEnumerable<BoatBLL> boats)
+        public void ShowMemberList(IEnumerable<MemberBLL> members, IEnumerable<BoatBLL> boats)
         {
             Console.WriteLine("****  Members ****\n");
             int noOfBoats = 0;
@@ -87,9 +99,9 @@ namespace _1DV607_WS2.View
                 }
                 Console.WriteLine("MemberId:" + member.MemberId + " " + member.FirstName + " " + member.LastName + "  Boats: " + noOfBoats);
             }
-            Menu.pressKeyToContinue();
+            Menu.PressKeyToContinue();
         }
-        public void showMemberListVerbose(IEnumerable<MemberBLL> members, IEnumerable<BoatBLL> boats)
+        public void ShowMemberListVerbose(IEnumerable<MemberBLL> members, IEnumerable<BoatBLL> boats)
         {
             Console.WriteLine("****  Members ****\n");
             int noOfBoats = 0;
@@ -100,10 +112,10 @@ namespace _1DV607_WS2.View
                 foreach (BoatBLL boat in boats)
                 {
                     if (member.MemberId == boat.MemberId)
-                        boatMenu.showBoatRow(boat, ++noOfBoats);
+                        boatMenu.ShowBoatRow(boat, ++noOfBoats);
                 }
             }
-            Menu.pressKeyToContinue();
+            Menu.PressKeyToContinue();
         }
  
  

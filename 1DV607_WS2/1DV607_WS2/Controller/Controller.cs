@@ -47,177 +47,179 @@ namespace _1DV607_WS2.Controller
                     case 1: //create a member
                         {
                             MemberBLL member = new MemberBLL();
-                            member = this.menu.createMemberMenu(member);
-                            saveMember(member);
-                            this.menu.memberCreatedMenu(member);
+                            member = this.menu.CreateMemberMenu(member);
+                            SaveMember(member);
+                            this.menu.MemberCreatedMenu(member);
 
                             break;
                         }
                     case 2: // update member
                         {
-                            int memberId = this.menu.getMemberMenu();
+                            string SSN = this.menu.GetMemberMenu();
                             MemberBLL member = new MemberBLL();
-                            member.MemberId = memberId;
-                            member = getMember(member);
+                            member.SSN = SSN;
+                            member = GetMember(member);
                             if (member != null)
                             {
-                                member = this.menu.updateMemberMenu(member);
-                                saveMember(member);
-                                member = getMember(member);
-                                this.menu.memberUpdatedMenu(member);
+                                member = this.menu.UpdateMemberMenu(member);
+                                SaveMember(member);
+                                member = GetMember(member);
+                                this.menu.MemberUpdatedMenu(member);
                             }
                             else
                             {
                                 MemberBLL voidMember = new MemberBLL();
-                                voidMember.MemberId = memberId;
-                                this.menu.memberUpdatedMenu(voidMember, false);
+                                voidMember.SSN = SSN;
+                                this.menu.MemberUpdatedMenu(voidMember, false);
                             }
                             break;
                         }
                     case 3: // view member
                         {
-                            int memberId = this.menu.getMemberMenu();
+                            string SSN = this.menu.GetMemberMenu();
                             MemberBLL member = new MemberBLL();
-                            member.MemberId = memberId;
-                            member = getMember(member);
+                            member.SSN = SSN;
+                            member = GetMember(member);
                             if (member != null)
                             {
-                                this.menu.showMemberMenu(member);
+                                this.menu.ShowMemberMenu(member);
                             }
                             else
                             {
                                 MemberBLL voidMember = new MemberBLL();
-                                voidMember.MemberId = memberId;
-                                this.menu.showMemberMenu(voidMember, false);
+                                voidMember.SSN = SSN;
+                                this.menu.ShowMemberMenu(voidMember, false);
                             }
                             break;
                         }
                     case 4: // delete member
                         {
 
-                            int memberId = this.menu.getMemberMenu();
+                            string SSN = this.menu.GetMemberMenu();
                             MemberBLL member = new MemberBLL();
-                            member.MemberId = memberId;
-                            member = getMember(member);
+                            member.SSN = SSN;
+                            member = GetMember(member);
                             if (member != null)
                             {
-                                deleteMember(memberId);
-                                member = getMember(member);
+                                DeleteMember(SSN);
+                                member = GetMember(member);
                                 if (member != null)
-                                    this.menu.memberDeletedMenu(memberId, false);
+                                    this.menu.MemberDeletedMenu(SSN, false);
                                 else
-                                    this.menu.memberDeletedMenu(memberId);
+                                    this.menu.MemberDeletedMenu(SSN);
                             }
                             else
                             {
                                 MemberBLL voidMember = new MemberBLL();
-                                voidMember.MemberId = memberId;
-                                this.menu.showMemberMenu(voidMember, false);
+                                voidMember.SSN = SSN;
+                                this.menu.ShowMemberMenu(voidMember, false);
                             }
                             break;
                         }
                     case 5: // register boat
                         {
 
-                            int memberId = this.menu.getMemberMenu();
+                            string SSN = this.menu.GetMemberMenu();
                             BoatBLL boat = new BoatBLL();
                             MemberBLL member = new MemberBLL();
-                            member.MemberId = memberId;
-                            member = getMember(member);
+                            member.SSN = SSN;
+                            member = GetMember(member);
                             if (member != null)
                             {
-                                boat = this.menu.createBoatMenu(memberId, boat);
-                                saveBoat(boat);
-                                this.menu.boatCreatedMenu(boat);
+                                boat = this.menu.CreateBoatMenu(member.MemberId, boat);
+                                SaveBoat(boat);
+                                this.menu.BoatCreatedMenu(boat);
                             }
                             else
                             {
-                                this.menu.boatCreatedMenu(null, false);
+                                this.menu.BoatCreatedMenu(null, false);
                             }
                             break;
                         }
                     case 6: // update boat
                         {
-                            int memberId = this.menu.getMemberMenu();
+                            string SSN = this.menu.GetMemberMenu();
                             MemberBLL member = new MemberBLL();
-                            member.MemberId = memberId;
-                            member = getMember(member);
+                            member.SSN = SSN;
+                            member = GetMember(member);
                             if (member != null)
                             {
                                 IEnumerable<BoatBLL> boats;
-                                boats = getBoats(memberId);
-                                BoatBLL boat = this.menu.selectBoatMenu(boats);
+                                boats = GetBoats(member.MemberId);
+                                BoatBLL boat = this.menu.SelectBoatMenu(boats);
                                 if (boat != null)
                                 {
-                                    boat = this.menu.updateBoatMenu(boat);
-                                    saveBoat(boat);
+                                    boat = this.menu.UpdateBoatMenu(boat);
+                                    SaveBoat(boat);
                                     boat = GetBoat(boat);
-                                    this.menu.boatUpdatedMenu(boat);
+                                    this.menu.BoatUpdatedMenu(boat);
                                 }
                                 else
                                 {
                                     BoatBLL voidBoat = new BoatBLL();
-                                    voidBoat.MemberId = memberId;
-                                    this.menu.boatUpdatedMenu(voidBoat, false);
+                                    voidBoat.MemberId = member.MemberId;
+                                    this.menu.BoatUpdatedMenu(voidBoat, false);
                                 }
                             }
                             else
                             {
                                 MemberBLL voidMember = new MemberBLL();
-                                voidMember.MemberId = memberId;
-                                this.menu.showMemberMenu(voidMember, false);
+                                voidMember.SSN = SSN;
+                                this.menu.ShowMemberMenu(voidMember, false);
                             }
                             break;
                         }
                     case 7: // delete boat
                         {
-                            int memberId = this.menu.getMemberMenu();
+                            string SSN = this.menu.GetMemberMenu();
                             MemberBLL member = new MemberBLL();
-                            member.MemberId = memberId;
-                            member = getMember(member);
+                            member.SSN = SSN;
+                            member = GetMember(member);
                             if (member != null)
                             {
                                 IEnumerable<BoatBLL> boats;
-                                boats = getBoats(memberId);
-                                BoatBLL boat = this.menu.selectBoatMenu(boats);
+                                BoatBLL boat = null;
+                                boats = GetBoats(member.MemberId);
+                                if (boats.Count() != 0)
+                                {
+                                    boat = this.menu.SelectBoatMenu(boats);
+                                }
                                 if (boat != null)
                                 {
-                                    deleteBoat(boat.BoatId);
+                                    DeleteBoat(boat.BoatId);
                                     boat = GetBoat(boat);
                                     if (boat != null)
-                                        this.menu.boatDeletedMenu(boat, false);
+                                        this.menu.BoatDeletedMenu(boat, member, false);
                                     else
-                                        this.menu.boatDeletedMenu(boat);
+                                        this.menu.BoatDeletedMenu(boat, member);
                                 }
                                 else
                                 {
                                     BoatBLL voidBoat = new BoatBLL();
-                                    voidBoat.MemberId = memberId;
-                                    this.menu.boatDeletedMenu(boat, false);
+                                    voidBoat.MemberId = member.MemberId;
+                                    this.menu.BoatDeletedMenu(voidBoat, member, false);
                                 }
                             }
                             else
                             {
                                 MemberBLL voidMember = new MemberBLL();
-                                voidMember.MemberId = memberId;
-                                this.menu.showMemberMenu(voidMember, false);
+                                voidMember.SSN = SSN;
+                                this.menu.ShowMemberMenu(voidMember, false);
                             }
                             break;
                         }
                     case 8: // list members
                         {
-                            IEnumerable<MemberBLL> members = getMembers();
-                            IEnumerable<BoatBLL> boats = getAllBoats();
-                            BoatBLL[] boatArray = boats.Cast<BoatBLL>().ToArray();
-                            this.menu.showMemberList(members, boats);
+                            IEnumerable<MemberBLL> members = GetMembers();
+                            IEnumerable<BoatBLL> boats = GetAllBoats();
+                            this.menu.ShowMemberList(members, boats);
                             break;
                         }
                     case 9: // list members verbose
                         {
-                            IEnumerable<MemberBLL> members = getMembers();
-                            IEnumerable<BoatBLL> boats = getAllBoats();
-                            BoatBLL[] boatArray = boats.Cast<BoatBLL>().ToArray();
-                            this.menu.showMemberListVerbose(members, boats);
+                            IEnumerable<MemberBLL> members = GetMembers();
+                            IEnumerable<BoatBLL> boats = GetAllBoats();
+                            this.menu.ShowMemberListVerbose(members, boats);
 
                             break;
                         }
@@ -235,39 +237,39 @@ namespace _1DV607_WS2.Controller
         }
 
 // Member part
-        public MemberBLL getMember(MemberBLL member)
+        public MemberBLL GetMember(MemberBLL member)
         {
-            return MemberDAL.getMember(member);
+            return MemberDAL.GetMember(member);
         }
 
-        public IEnumerable<MemberBLL> getMembers()
+        public IEnumerable<MemberBLL> GetMembers()
         {
-            return MemberDAL.getMembers();
+            return MemberDAL.GetMembers();
         }
 
 
-        public void saveMember(MemberBLL member)
+        public void SaveMember(MemberBLL member)
         {
             if (member == null || member.SSN == null)  // more validations ??
             {
                 throw new Exception("member didn't validate correctly");
             }
             MemberBLL oldMember = new MemberBLL();
-            oldMember.MemberId = member.MemberId;
-            if (getMember(oldMember) != null)
+            oldMember.SSN = member.SSN;
+            if (GetMember(oldMember) != null)
             {
-                MemberDAL.updateMember(member);
+                MemberDAL.UpdateMember(member);
             }
             else
             {
-                MemberDAL.insertMember(member);
+                MemberDAL.IinsertMember(member);
             }
         }
 
 
-        public void deleteMember(int memberId)
+        public void DeleteMember(string SSN)
         {
-            MemberDAL.deleteMember(memberId);
+            MemberDAL.DeleteMember(SSN);
         }
 
  // Boat part
@@ -276,17 +278,17 @@ namespace _1DV607_WS2.Controller
             return BoatDAL.GetBoat(boat);
         }
 
-        public IEnumerable<BoatBLL> getBoats(int memberId)
+        public IEnumerable<BoatBLL> GetBoats(int memberId)
         {
-            return BoatDAL.getBoats(memberId);
+            return BoatDAL.GetBoats(memberId);
         }
-        public IEnumerable<BoatBLL> getAllBoats()
+        public IEnumerable<BoatBLL> GetAllBoats()
         {
-            return BoatDAL.getAllBoats();
+            return BoatDAL.GetAllBoats();
         }
 
 
-        public void saveBoat(BoatBLL boat)
+        public void SaveBoat(BoatBLL boat)
         {
             if (boat == null || boat.MemberId == 0)  // more validations ??
             {
@@ -296,18 +298,18 @@ namespace _1DV607_WS2.Controller
             oldBoat.BoatId = boat.BoatId;
             if (GetBoat(oldBoat) != null)
             {
-                BoatDAL.updateBoat(boat);
+                BoatDAL.UpdateBoat(boat);
             }
             else
             {
-                BoatDAL.insertBoat(boat);
+                BoatDAL.InsertBoat(boat);
             }
         }
 
 
-        public void deleteBoat(int boatId)
+        public void DeleteBoat(int boatId)
         {
-            BoatDAL.deleteBoat(boatId);
+            BoatDAL.DeleteBoat(boatId);
         }
 
     }
