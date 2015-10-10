@@ -9,6 +9,7 @@ namespace _1DV607_WS2.View
 {
     public class Menu
     {
+        public enum UserAction {EndSession, CreateMember, UpdateMember, ViewMember, DeleteMember, RegisterBoat, UpdateBoat, DeleteBoat, ListMembers, ListMembersVerbose};
         private MemberMenu memberMenu;
         private BoatMenu boatMenu;
 
@@ -17,7 +18,7 @@ namespace _1DV607_WS2.View
             this.boatMenu = new BoatMenu();
             this.memberMenu = new MemberMenu(this.boatMenu);
         }
-        public int mainMenu()
+        public UserAction mainMenu()
         {
             ConsoleKeyInfo cki;
             try
@@ -47,43 +48,43 @@ namespace _1DV607_WS2.View
                     {
                         case ConsoleKey.D1:
                            {
-                                return 1;
+                               return UserAction.CreateMember;
                            }
                         case ConsoleKey.D2:
                             {
-                                return 2;
+                                return UserAction.UpdateMember;
                             }
                         case ConsoleKey.D3:
                             {
-                                return 3;
+                                return UserAction.ViewMember;
                             }
                         case ConsoleKey.D4:
                             {
-                                return 4;
+                                return UserAction.UpdateMember;
                             }
                         case ConsoleKey.D5:
                             {
-                                return 5;
+                                return UserAction.RegisterBoat;
                             }
                         case ConsoleKey.D6:
                             {
-                                return 6;
+                                return UserAction.UpdateBoat;
                             }
                         case ConsoleKey.D7:
                             {
-                                return 7;
+                                return UserAction.DeleteBoat;
                             }
                         case ConsoleKey.D8:
                             {
-                                return 8;
+                                return UserAction.ListMembers;
                             }
                         case ConsoleKey.D9:
                             {
-                                return 9;
+                                return UserAction.ListMembersVerbose;
                             }
                         case ConsoleKey.Escape:
                             {
-                                return 0;
+                                return UserAction.EndSession;
                             }
                         default :
                             {
@@ -95,7 +96,6 @@ namespace _1DV607_WS2.View
                     };
                 }
                 while (true);
-                return 0;
             }
             catch
             {

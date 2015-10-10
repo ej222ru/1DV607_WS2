@@ -32,19 +32,18 @@ namespace _1DV607_WS2.Controller
 
         public void start()
         {
-            int menuChoice;
+            _1DV607_WS2.View.Menu.UserAction menuChoice;
             do
             {
 
                 menuChoice = this.menu.mainMenu();
                 switch (menuChoice)
                 {
-                    case 0:  // ESC  terminate
+                    case _1DV607_WS2.View.Menu.UserAction.EndSession :  
                         {
-                            
                             return;
                         }
-                    case 1: //create a member
+                    case _1DV607_WS2.View.Menu.UserAction.CreateMember: 
                         {
                             MemberBLL member = new MemberBLL();
                             member = this.menu.CreateMemberMenu(member);
@@ -53,7 +52,7 @@ namespace _1DV607_WS2.Controller
 
                             break;
                         }
-                    case 2: // update member
+                    case _1DV607_WS2.View.Menu.UserAction.UpdateMember: 
                         {
                             string SSN = this.menu.GetMemberMenu();
                             MemberBLL member = new MemberBLL();
@@ -74,7 +73,7 @@ namespace _1DV607_WS2.Controller
                             }
                             break;
                         }
-                    case 3: // view member
+                    case _1DV607_WS2.View.Menu.UserAction.ViewMember: 
                         {
                             string SSN = this.menu.GetMemberMenu();
                             MemberBLL member = new MemberBLL();
@@ -92,7 +91,7 @@ namespace _1DV607_WS2.Controller
                             }
                             break;
                         }
-                    case 4: // delete member
+                    case _1DV607_WS2.View.Menu.UserAction.DeleteMember: 
                         {
 
                             string SSN = this.menu.GetMemberMenu();
@@ -116,7 +115,7 @@ namespace _1DV607_WS2.Controller
                             }
                             break;
                         }
-                    case 5: // register boat
+                    case _1DV607_WS2.View.Menu.UserAction.RegisterBoat: 
                         {
 
                             string SSN = this.menu.GetMemberMenu();
@@ -136,7 +135,7 @@ namespace _1DV607_WS2.Controller
                             }
                             break;
                         }
-                    case 6: // update boat
+                    case _1DV607_WS2.View.Menu.UserAction.UpdateBoat: 
                         {
                             string SSN = this.menu.GetMemberMenu();
                             MemberBLL member = new MemberBLL();
@@ -169,7 +168,7 @@ namespace _1DV607_WS2.Controller
                             }
                             break;
                         }
-                    case 7: // delete boat
+                    case _1DV607_WS2.View.Menu.UserAction.DeleteBoat: 
                         {
                             string SSN = this.menu.GetMemberMenu();
                             MemberBLL member = new MemberBLL();
@@ -208,14 +207,14 @@ namespace _1DV607_WS2.Controller
                             }
                             break;
                         }
-                    case 8: // list members
+                    case _1DV607_WS2.View.Menu.UserAction.ListMembers: 
                         {
                             IEnumerable<MemberBLL> members = GetMembers();
                             IEnumerable<BoatBLL> boats = GetAllBoats();
                             this.menu.ShowMemberList(members, boats);
                             break;
                         }
-                    case 9: // list members verbose
+                    case _1DV607_WS2.View.Menu.UserAction.ListMembersVerbose: 
                         {
                             IEnumerable<MemberBLL> members = GetMembers();
                             IEnumerable<BoatBLL> boats = GetAllBoats();
