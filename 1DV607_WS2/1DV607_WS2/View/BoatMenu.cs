@@ -9,12 +9,12 @@ namespace _1DV607_WS2.View
 {
     public class BoatMenu
     {
-        public BoatBLL CreateBoatMenu(int memberId, BoatBLL boat)
+        public BoatBLL CreateBoatMenu(string SSN, BoatBLL boat)
         {
             BoatType boatType = CreateBoatTypeMenu();
             int length = (int)Menu.ReadInt("Boat length: ");
 
-            boat.MemberId = memberId;
+            boat.SSN = SSN;
             boat.BoatType = boatType;
             boat.BoatLength = length;
 
@@ -108,13 +108,13 @@ namespace _1DV607_WS2.View
         public void ShowBoat(BoatBLL boat)
         {
             Console.WriteLine("Boat Id: " + boat.BoatId);
-            Console.WriteLine("Member Id: " + boat.MemberId);
+            Console.WriteLine("Owner: " + boat.SSN);
             Console.WriteLine("BoatType: " + TranslateBoatType(boat.BoatType));
             Console.WriteLine("BoatLength: " + boat.BoatLength);
         }
         public void ShowBoatRow(BoatBLL boat, int index)
         {
-            Console.WriteLine("  " + index + "   -  " + "BoatId: " + boat.BoatId + "  MemberId: " + boat.MemberId + "  BoatType: " + TranslateBoatType(boat.BoatType) + "  Boat length: " + boat.BoatLength);
+            Console.WriteLine("  " + index + "   -  " + "BoatId: " + boat.BoatId + "  Owner: " + boat.SSN + "  BoatType: " + TranslateBoatType(boat.BoatType) + "  Boat length: " + boat.BoatLength);
         }
         public BoatBLL SelectBoatMenu(IEnumerable<BoatBLL> boats)
         {
@@ -151,7 +151,7 @@ namespace _1DV607_WS2.View
         {
             Console.WriteLine("Just press ENTER for fields you don't want to change");
 
-            int? memberId = Menu.ReadInt("memberId: ", false);
+            string SSN = Menu.ReadLine("Owner SSN: ", false);
             int? boatType;
 
             bool done = false;
@@ -177,8 +177,8 @@ namespace _1DV607_WS2.View
             while (!done);
 
             int?  boatLength = Menu.ReadInt("Boat length: ", false);
-            if (memberId != null)
-                boat.MemberId = (int)memberId;
+            if (SSN != null && SSN != "")
+                boat.SSN = SSN;
             if (boatType != null)
                 boat.BoatType = (BoatType)boatType;
             if (boatLength != null)
@@ -211,7 +211,7 @@ namespace _1DV607_WS2.View
             else
             {
                 Console.WriteLine("****  Boat update failed ****\n");
-                Console.WriteLine("MemberId: " + boat.MemberId + "  BoatId: " + boat.BoatId);
+                Console.WriteLine("Owner SSN: " + boat.SSN + "  BoatId: " + boat.BoatId);
 
             }
             Menu.PressKeyToContinue();
@@ -221,18 +221,18 @@ namespace _1DV607_WS2.View
             if (succeeded)
             {
                 Console.WriteLine("****  You deleted a boat ****\n");
-                Console.WriteLine("For MemberSSN: " + member.SSN);
+                Console.WriteLine("For Owner SSN: " + member.SSN);
             }
             else
             {
                 Console.WriteLine("****  Boat delete failed ****\n");
                 if (boat.BoatId == 0)
                 {
-                    Console.WriteLine("MemberSSN: " + member.SSN + " doesn't have a boat registered ");
+                    Console.WriteLine("Owner SSN: " + member.SSN + " doesn't have a boat registered ");
                 }
                 else
                 {
-                    Console.WriteLine("MemberSSN: " + member.SSN + "  BoatId: " + boat.BoatId);
+                    Console.WriteLine("Owner SSN: " + member.SSN + "  BoatId: " + boat.BoatId);
                 }
             }
             Menu.PressKeyToContinue();
@@ -247,7 +247,7 @@ namespace _1DV607_WS2.View
             else
             {
                 Console.WriteLine("****  Boat info not found ****\n");
-                Console.WriteLine("Member Id:  " + boat.MemberId + "Boat Id:" + boat.BoatId);
+                Console.WriteLine("Owner SSN:  " + boat.SSN + "Boat Id:" + boat.BoatId);
 
             }
             Menu.PressKeyToContinue();

@@ -80,44 +80,39 @@ namespace _1DV607_WS2.View
 
         public void ShowMember(MemberBLL member)
         {
-            Console.WriteLine("Member Id:  " + member.MemberId);
+            Console.WriteLine("SSN:        " + member.SSN);
             Console.WriteLine("First name: " + member.FirstName);
             Console.WriteLine("Last name:  " + member.LastName);
-            Console.WriteLine("SSN:        " + member.SSN);
+            Console.WriteLine("Member Id:  " + member.MemberId);
         }
-        public void ShowMemberList(IEnumerable<MemberBLL> members, IEnumerable<BoatBLL> boats)
+        public void ShowMemberList(IEnumerable<MemberDetailsBLL> memberDetails)
         {
             Console.WriteLine("****  Members ****\n");
-            int noOfBoats = 0;
-            foreach (MemberBLL member in members)
+            foreach (MemberDetailsBLL member in memberDetails)
             {
-                noOfBoats = 0;
-                foreach (BoatBLL boat in boats)
-                {
-                    if (member.MemberId == boat.MemberId)
-                        noOfBoats++;
-                }
-                Console.WriteLine("MemberId:" + member.MemberId + " " + member.FirstName + " " + member.LastName + "  Boats: " + noOfBoats);
+                Console.WriteLine("Member SSN:" + member.SSN + " " + member.FirstName + " " + member.LastName + " has " + member.Boats.Count() + " boats");
             }
             Menu.PressKeyToContinue();
         }
-        public void ShowMemberListVerbose(IEnumerable<MemberBLL> members, IEnumerable<BoatBLL> boats)
+
+
+        public void ShowMemberListVerbose(IEnumerable<MemberDetailsBLL> memberDetails)
         {
-            Console.WriteLine("****  Members ****\n");
             int noOfBoats = 0;
-            foreach (MemberBLL member in members)
+            Console.WriteLine("****  Members ****\n");
+            foreach (MemberDetailsBLL member in memberDetails)
             {
-                noOfBoats = 0;
-                Console.WriteLine("\nMemberId:" + member.MemberId + " " + member.FirstName + " " + member.LastName + "  SSN: " + member.SSN);
-                foreach (BoatBLL boat in boats)
+                Console.WriteLine("\nMember SSN:" + member.SSN + " " + member.FirstName + " " + member.LastName);
+                foreach (BoatBLL boat in member.Boats)
                 {
-                    if (member.MemberId == boat.MemberId)
-                        boatMenu.ShowBoatRow(boat, ++noOfBoats);
+                    boatMenu.ShowBoatRow(boat, ++noOfBoats);
                 }
             }
+
             Menu.PressKeyToContinue();
         }
  
+
  
     }
 }

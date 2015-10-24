@@ -105,9 +105,9 @@ namespace _1DV607_WS2.View
         }
 
 //********************* Boat stuff 
-        public BoatBLL CreateBoatMenu(int memberId, BoatBLL boat)
+        public BoatBLL CreateBoatMenu(string SSN, BoatBLL boat)
         {
-            return boatMenu.CreateBoatMenu(memberId, boat);
+            return boatMenu.CreateBoatMenu(SSN, boat);
         }
 
         public BoatBLL SelectBoatMenu(IEnumerable<BoatBLL> boats)
@@ -147,13 +147,14 @@ namespace _1DV607_WS2.View
         {
             return memberMenu.UpdateMemberMenu(member);
         }
-        public void ShowMemberList(IEnumerable<MemberBLL> members, IEnumerable<BoatBLL> boats)
+        public void ShowMemberList(IEnumerable<MemberDetailsBLL> memberDetails)
         {
-            memberMenu.ShowMemberList(members, boats);
+            memberMenu.ShowMemberList(memberDetails);
         }
-        public void ShowMemberListVerbose(IEnumerable<MemberBLL> members, IEnumerable<BoatBLL> boats)
+
+        public void ShowMemberListVerbose(IEnumerable<MemberDetailsBLL> memberDetails)
         {
-            memberMenu.ShowMemberListVerbose(members, boats);
+            memberMenu.ShowMemberListVerbose(memberDetails);
         }
 
 

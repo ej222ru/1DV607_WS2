@@ -13,7 +13,7 @@ namespace _1DV607_WS2.Model.DAL
 
     public class MemberDAL : BaseDAL
     {
-        public void IinsertMember(MemberBLL member)
+        public void InsertMember(MemberBLL member)
         {
             using (SqlConnection conn = CreateConnection())
             {

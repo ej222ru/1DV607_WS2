@@ -26,7 +26,7 @@ namespace _1DV607_WS2.Model.DAL
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@BoatType", SqlDbType.Int, 4).Value = boat.BoatType;
                     cmd.Parameters.Add("@BoatLength", SqlDbType.Int, 4).Value = boat.BoatLength;
-                    cmd.Parameters.Add("@MemberId", SqlDbType.Int, 4).Value = boat.MemberId;
+                    cmd.Parameters.Add("@SSN", SqlDbType.VarChar, 12).Value = boat.SSN;
                     cmd.Parameters.Add("@BoatId", SqlDbType.Int).Direction = ParameterDirection.Output;
 
                     conn.Open();
@@ -51,7 +51,7 @@ namespace _1DV607_WS2.Model.DAL
                     SqlCommand cmd = new SqlCommand("appSchema.uspUpdateBoat", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@BoatId", SqlDbType.Int, 4).Value = boat.BoatId;
-                    cmd.Parameters.Add("@MemberId", SqlDbType.Int, 4).Value = boat.MemberId;
+                    cmd.Parameters.Add("@SSN", SqlDbType.VarChar, 12).Value = boat.SSN;
                     cmd.Parameters.Add("@BoatType", SqlDbType.Int, 4).Value = boat.BoatType;
                     cmd.Parameters.Add("@BoatLength", SqlDbType.Int, 4).Value = boat.BoatLength;
 
@@ -99,11 +99,11 @@ namespace _1DV607_WS2.Model.DAL
                     {
                         if (reader.Read())
                         {
-                            int MemberIdIndex = reader.GetOrdinal("MemberId");
+                            int SSNIndex = reader.GetOrdinal("SSN");
                             int BoatTypeIndex   = reader.GetOrdinal("BoatType");
                             int BoatLengthIndex        = reader.GetOrdinal("BoatLength");
 
-                            boat.MemberId   = reader.GetInt32(MemberIdIndex);
+                            boat.SSN = reader.GetString(SSNIndex);
                             boat.BoatType   = (BoatType)reader.GetInt32(BoatTypeIndex);
                             boat.BoatLength = reader.GetInt32(BoatLengthIndex);
                             return boat;
@@ -117,7 +117,7 @@ namespace _1DV607_WS2.Model.DAL
                 }
             }
         }
-        public IEnumerable<BoatBLL> GetBoats(int memberId)
+        public IEnumerable<BoatBLL> GetBoats(string SSN)
         {
             using (SqlConnection conn = CreateConnection())
             {
@@ -127,7 +127,7 @@ namespace _1DV607_WS2.Model.DAL
 
                     SqlCommand cmd = new SqlCommand("appSchema.uspGetBoats", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MemberId", SqlDbType.Int, 4).Value = memberId;
+                    cmd.Parameters.Add("@SSN", SqlDbType.VarChar, 12).Value = SSN;
                     conn.Open();
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -135,13 +135,13 @@ namespace _1DV607_WS2.Model.DAL
                         while (reader.Read())
                         {
                             int BoatIdIndex = reader.GetOrdinal("BoatId");
-                            int MemberIdIndex = reader.GetOrdinal("MemberId");
+                            int SSNIndex = reader.GetOrdinal("SSN");
                             int BoatTypeIndex = reader.GetOrdinal("BoatType");
                             int BoatLengthIndex = reader.GetOrdinal("BoatLength");
                             boats.Add(new BoatBLL
                             {
                                 BoatId = reader.GetInt32(BoatIdIndex),
-                                MemberId = reader.GetInt32(MemberIdIndex),
+                                SSN = reader.GetString(SSNIndex),
                                 BoatType = (BoatType)reader.GetInt32(BoatTypeIndex),
                                 BoatLength   = reader.GetInt32(BoatLengthIndex),
                             });
@@ -174,13 +174,13 @@ namespace _1DV607_WS2.Model.DAL
                         while (reader.Read())
                         {
                             int BoatIdIndex = reader.GetOrdinal("BoatId");
-                            int MemberIdIndex = reader.GetOrdinal("MemberId");
+                            int SSNIndex = reader.GetOrdinal("SSN");
                             int BoatTypeIndex = reader.GetOrdinal("BoatType");
                             int BoatLengthIndex = reader.GetOrdinal("BoatLength");
                             boats.Add(new BoatBLL
                             {
                                 BoatId = reader.GetInt32(BoatIdIndex),
-                                MemberId = reader.GetInt32(MemberIdIndex),
+                                SSN = reader.GetString(SSNIndex),
                                 BoatType = (BoatType)reader.GetInt32(BoatTypeIndex),
                                 BoatLength = reader.GetInt32(BoatLengthIndex),
                             });

@@ -14,4 +14,18 @@ namespace _1DV607_WS2.Model.BLL
         public string FirstName { get; set; }
         public string LastName { get; set; }
     }
+
+    public class MemberDetailsBLL : MemberBLL
+    {
+        public IEnumerable<BoatBLL> Boats { get; set; }
+        public MemberDetailsBLL(MemberBLL member)
+        {
+            MemberId = member.MemberId;
+            SSN = member.SSN;
+            FirstName = member.FirstName;
+            LastName = member.LastName;
+        }
+    }
+
+
 }
