@@ -129,9 +129,9 @@ namespace _1DV607_WS2.View
         {
             boatMenu.BoatUpdatedMenu(boat, succeeded);
         }
-        public void BoatDeletedMenu(BoatBLL boat, MemberBLL member, bool succeeded = true)
+        public void BoatDeletedMenu(BoatBLL boat, bool succeeded = true)
         {
-            boatMenu.BoatDeletedMenu(boat, member, succeeded);
+            boatMenu.BoatDeletedMenu(boat, succeeded);
         }
 
 //***************** Member stuff

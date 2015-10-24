@@ -216,23 +216,23 @@ namespace _1DV607_WS2.View
             }
             Menu.PressKeyToContinue();
         }
-        public void BoatDeletedMenu(BoatBLL boat, MemberBLL member, bool succeeded = true)
+        public void BoatDeletedMenu(BoatBLL boat, bool succeeded = true)
         {
             if (succeeded)
             {
                 Console.WriteLine("****  You deleted a boat ****\n");
-                Console.WriteLine("For Owner SSN: " + member.SSN);
+                Console.WriteLine("For Owner SSN: " + boat.SSN);
             }
             else
             {
                 Console.WriteLine("****  Boat delete failed ****\n");
                 if (boat.BoatId == 0)
                 {
-                    Console.WriteLine("Owner SSN: " + member.SSN + " doesn't have a boat registered ");
+                    Console.WriteLine("Owner SSN: " + boat.SSN + " doesn't have a boat registered ");
                 }
                 else
                 {
-                    Console.WriteLine("Owner SSN: " + member.SSN + "  BoatId: " + boat.BoatId);
+                    Console.WriteLine("Owner SSN: " + boat.SSN + "  BoatId: " + boat.BoatId);
                 }
             }
             Menu.PressKeyToContinue();

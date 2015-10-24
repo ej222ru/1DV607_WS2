@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="4a8dd878-fd4c-4d7e-aaf5-f1a3f134259d"
+  name="Model"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="35917f0f-0ebb-4105-a6fa-dc6a5c7d55cd"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3D_1DV607_WS2.Model"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="e16c0788-0f3f-4c1c-98ea-cafebd6297c5"
+        LastKnownName="BLL"
+        LastKnownLocation="Package4_1334.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="8b89b96b-4faf-42d1-80e8-9da15e36222c"
+        LastKnownName="DAL"
+        LastKnownLocation="Package8_1334.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

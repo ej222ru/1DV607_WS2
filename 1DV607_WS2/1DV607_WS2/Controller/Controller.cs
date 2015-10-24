@@ -185,18 +185,19 @@ namespace _1DV607_WS2.Controller
                                 }
                                 if (boat != null)
                                 {
+                                    BoatBLL tempBoat = boat;
                                     DeleteBoat(boat.BoatId);
                                     boat = GetBoat(boat);
                                     if (boat != null)
-                                        this.menu.BoatDeletedMenu(boat, member, false);
+                                        this.menu.BoatDeletedMenu(boat, false);
                                     else
-                                        this.menu.BoatDeletedMenu(boat, member);
+                                        this.menu.BoatDeletedMenu(tempBoat);
                                 }
                                 else
                                 {
                                     BoatBLL voidBoat = new BoatBLL();
                                     voidBoat.SSN = member.SSN;
-                                    this.menu.BoatDeletedMenu(voidBoat, member, false);
+                                    this.menu.BoatDeletedMenu(voidBoat, false);
                                 }
                             }
                             else

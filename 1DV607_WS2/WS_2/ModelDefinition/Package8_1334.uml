@@ -1,0 +1,1601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="8b89b96b-4faf-42d1-80e8-9da15e36222c"
+  name="DAL"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="e37f3e78-6b27-41cd-a111-63c4e5dc3e65"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3D_1DV607_WS2.Model.DAL"
+      tag="ViewCode" />
+  </referencesInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="6e746366-d28e-438a-a5b5-28cc10b6b120">
+      <profileInstance
+        Id="ca0078b8-95c1-4812-9d24-ac91c2d1fe8b"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="e3a1f4f2-7c93-4070-8ace-18e9be29d853"
+        name="MemberDAL"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="8b656032-f8c2-4acc-a067-f23ebca59b98"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DMemberDAL"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="d997ae81-bee8-4dfc-a2c0-49ca86c4a7e2"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="99dd806d-9fd4-470f-94c9-633d2d00e4ec">
+                <propertyInstance
+                  Id="f1ffa43c-1b8f-4f62-ba38-32776db3eda7"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="324b3538-5c00-4edd-a2e7-491d766082de">
+                <propertyInstance
+                  Id="72ae1194-724e-44a1-b266-f9fa5b59643c"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4b2b30d1-0a44-4ea1-b981-c1cad393099a">
+                <propertyInstance
+                  Id="3a783986-5ce4-4d80-ab6d-2e54e8066227"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d97c0912-3f13-427e-9933-9a561ddeb24f">
+                <propertyInstance
+                  Id="b7b17ac3-37ae-4c96-9e1b-f97258619829"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="138e2851-c3a3-409b-9c4c-edb609ca71c0">
+                <propertyInstance
+                  Id="2a014092-3252-41f6-a91a-537fb708ebfd"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="6c901d9b-07f1-4da4-85ce-4cef654e8878"
+            isSubstitutable="false">
+            <classMoniker
+              Id="1b2a5043-e8eb-46a3-8d59-c4db76d7cea7"
+              LastKnownName="BaseDAL"
+              LastKnownLocation="Package8_1334.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="8400aa9a-febb-4626-9613-34ba98876e59"
+            name="InsertMember"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="67fb9c3b-7259-4ef3-b89e-9a3c40159928"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DMemberDAL Member%3D(Name%3DInsertMember OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.BLL Type%3DMemberBLL)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6625216a-6d9f-4831-ae99-42efc4cfec68"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0bcc8317-70c1-4118-a51f-641f67a11750">
+                    <propertyInstance
+                      Id="64b4a78a-6389-486d-ab09-4f44ba97e605"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b523a16a-e971-4434-a21a-9ee725c0e5cc">
+                    <propertyInstance
+                      Id="b537009d-4a00-4f6d-9089-e1740fd48a28"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4d7232e2-f70d-402e-9855-5f16dbd8258a">
+                    <propertyInstance
+                      Id="eb93949a-54e2-40c2-94b2-d6d0122dd5dd"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1aa5c8b9-7401-4cab-8a87-c61c6a44a295">
+                    <propertyInstance
+                      Id="a1c6abe1-0a19-49a1-ad98-77f75fbb4e52"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="378b20cd-aa8a-43d0-8e0e-1520b184ae55">
+                    <propertyInstance
+                      Id="f91e86c7-aa1e-4a56-babd-0b530a1e883d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6c3ae0ef-e70f-4276-8499-307961499176">
+                    <propertyInstance
+                      Id="edbbd0ba-1422-4d28-b504-8a1eadd590cb"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1c3d5ce5-c2c4-4d25-89d3-ef2eb2e8d4e1"
+                  name="member"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="c3c23476-c1e4-4526-b5d2-55469ed3bb5e"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DMemberDAL Member%3D(Name%3DInsertMember OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.BLL Type%3DMemberBLL)]) ParameterIdentifier%3Dmember"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f2dcdca5-b9e7-47f4-ad9c-9424853d646b"
+                      LastKnownName="MemberBLL"
+                      LastKnownLocation="Package4_1334.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="81fec5a4-d249-47e4-af10-d37ed6c994af"
+            name="UpdateMember"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="8e4c0752-4c2e-4eed-b54c-d8c2cf7ec6c5"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DMemberDAL Member%3D(Name%3DUpdateMember OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.BLL Type%3DMemberBLL)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d8e11215-cc28-4279-a043-e41890f08ddd"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1e7de8eb-4776-4cd8-b4cc-b96755b0f8ea">
+                    <propertyInstance
+                      Id="a97686aa-fb2f-454b-b159-aabc0a9f3c85"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7503d574-af8b-406a-9c9b-ff73e425f3f7">
+                    <propertyInstance
+                      Id="7e765665-f9b8-430d-a151-3cd67b7802d9"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d632f585-3eea-4f62-b833-5f0a8d6da619">
+                    <propertyInstance
+                      Id="79405288-2710-4dc7-9de2-586210bc388d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="56e333f2-74a2-4b62-ab93-e015ca00228b">
+                    <propertyInstance
+                      Id="2c8d5614-775a-4b92-9826-62fbc5ea6194"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5a20b376-5040-46de-905a-fb6912f14bf0">
+                    <propertyInstance
+                      Id="0ae3fa40-1f1e-435a-a5df-118aa6e89715"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3ece2633-fe60-47a3-8e33-d7e7ee8482e9">
+                    <propertyInstance
+                      Id="90ea5f11-6478-434d-850d-595113718e1d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="266a7b4d-3eee-409b-bd10-51eda8845aad"
+                  name="member"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="53cc8e3b-d2db-4132-aebd-ee00764a9501"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DMemberDAL Member%3D(Name%3DUpdateMember OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.BLL Type%3DMemberBLL)]) ParameterIdentifier%3Dmember"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f2dcdca5-b9e7-47f4-ad9c-9424853d646b"
+                      LastKnownName="MemberBLL"
+                      LastKnownLocation="Package4_1334.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="22e1c8a4-bd38-4d53-8f37-e8fd2b9448f9"
+            name="DeleteMember"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="0df176d6-7103-4bee-80f9-ba9346f83fb9"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DMemberDAL Member%3D(Name%3DDeleteMember OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="82461a03-0214-43c3-8536-6273e1f48ea7"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="02183b6c-9d8a-46bd-837b-0f1b496428eb">
+                    <propertyInstance
+                      Id="fe153e77-3db2-4971-95ff-e33fc7d72e87"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="905cae49-67bd-46e4-8826-2962f489c773">
+                    <propertyInstance
+                      Id="86197b3e-025a-4cda-85f6-44d7a60201d5"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="820c1600-f013-4311-b297-f9eaa5365e99">
+                    <propertyInstance
+                      Id="d3697e34-5aa3-4410-a16f-1443d783d6e1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2325bd49-6b7f-45f7-abf7-29c7c8de58f0">
+                    <propertyInstance
+                      Id="34183b66-3ce3-4d4a-a3de-74a055a56ded"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1fde54a3-c6da-454e-870a-feb63bdc05d5">
+                    <propertyInstance
+                      Id="20c47ca4-81ea-4ad6-b17d-3742a5addbf0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f0369310-3c93-476e-9baf-a8bb04b2b0f5">
+                    <propertyInstance
+                      Id="72a24d36-55c6-43c2-8dab-35d1c1d2f3c8"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ab10d7ba-3f53-4307-92e2-a044893b0f60"
+                  name="SSN"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="2bcc836b-57fe-4ba8-a212-889683dc1d00"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DMemberDAL Member%3D(Name%3DDeleteMember OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DSSN"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="WS_2.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="38b0127b-549c-4369-b4a3-109ff8880f6a"
+            name="GetMember"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="9a9eed1b-e00a-4916-9a01-e1090a5c386e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DMemberDAL Member%3D(Name%3DGetMember OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.BLL Type%3DMemberBLL)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a887152e-69c3-48ed-9e89-d1f03c3574c7"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4452f896-1f65-4429-a804-527dfb3567b5">
+                    <propertyInstance
+                      Id="f7b35cac-cf95-4f7a-90db-250d05f55a91"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ad43129-3709-4272-8651-1dff6f191b7a">
+                    <propertyInstance
+                      Id="6cdc95d0-8bf6-4a64-bd3c-00e3e8f1c40a"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="105275de-247a-4fc1-bdcc-974cd63d8f26">
+                    <propertyInstance
+                      Id="c81ef865-3c4e-42ef-a92a-d42a0cf99aa8"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bb98cd7f-0170-424b-99ed-1be4eccddf1a">
+                    <propertyInstance
+                      Id="b779b606-6b11-47de-9246-d06ab4a50b3c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fe6071a3-970a-414c-9795-fb58d6240428">
+                    <propertyInstance
+                      Id="3836ed1b-5376-4a5e-a7a1-15ff511f38eb"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1f96f6c3-a65a-4e21-bbff-6f2a71a7f650">
+                    <propertyInstance
+                      Id="8ddfde7e-8154-4199-a40b-7f268e6bfb6b"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a5675302-f597-4ade-a196-4b14c8eb4917"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f2dcdca5-b9e7-47f4-ad9c-9424853d646b"
+                      LastKnownName="MemberBLL"
+                      LastKnownLocation="Package4_1334.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7630f01b-3b0f-40f2-883e-343363ceb324"
+                  name="member"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="3455b95a-59f9-4e06-a0d2-099f6a3ab0d8"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DMemberDAL Member%3D(Name%3DGetMember OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.BLL Type%3DMemberBLL)]) ParameterIdentifier%3Dmember"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f2dcdca5-b9e7-47f4-ad9c-9424853d646b"
+                      LastKnownName="MemberBLL"
+                      LastKnownLocation="Package4_1334.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6b56b2bb-ba53-461b-af67-fc333ba338ab"
+            name="GetMembers"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="6c25bde3-cccc-47d3-b2d5-295ec341842c"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DMemberDAL Member%3DGetMembers"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="94154086-f909-473b-94b8-4f2ccf0dcb1d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="440617e8-c64d-4d63-8597-9d5b68856e2e">
+                    <propertyInstance
+                      Id="a02e3e53-a694-45c4-8fb7-cc8002ac5198"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7f290ca8-fa64-4266-bd43-64f18ac76bfc">
+                    <propertyInstance
+                      Id="a64ec8b9-4621-4c1a-a214-720e12fb9aca"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f01af818-b1af-432d-9fb5-ee9d21ff1b7c">
+                    <propertyInstance
+                      Id="8188b7fe-2b90-4e06-aadb-0a3538db78c5"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2ac22905-4bb8-4a12-b712-cddb88ac1cac">
+                    <propertyInstance
+                      Id="35a63ca5-f08d-49f1-bb01-39e17104d08b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aac1f0d9-8c14-4ad4-94b4-2ce51cdaf345">
+                    <propertyInstance
+                      Id="6d0dc700-4bc5-42d8-83e8-db841153cba2"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d06ec9df-b9f7-42dc-a692-5a75e780cc06">
+                    <propertyInstance
+                      Id="805646d4-b7b4-4e46-8755-1840d1635ed9"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f193ae0c-9f57-4aaf-b0e5-273ae96c1db3"
+                  direction="Return">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="4bfdfcfb-7447-419a-af25-8dbc3545837b"
+                      LastKnownName="IEnumerable&lt;MemberBLL‎&gt;"
+                      LastKnownLocation="Package7_1334.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="3e97d818-89bc-4009-96d0-b59986ee327d"
+            name="MemberDAL"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="114d93a2-934b-4969-9fcc-8a23edf4dc61"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DMemberDAL Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="530922a0-831e-4f49-978a-5c4e21e6569d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f2d9f86e-b58c-4cf4-9f44-2dd02ead6036">
+                    <propertyInstance
+                      Id="214b0be9-650e-48e5-aff8-3fd1a637c2eb"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="99b3fa37-75a3-4dea-b5f9-39e99882da83">
+                    <propertyInstance
+                      Id="0fd3cc76-6709-4821-93f0-12a19acaaf51"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ce88d31b-4629-4e53-b652-9e9d6be53e59">
+                    <propertyInstance
+                      Id="8bfd1bd5-b165-4610-8c77-8246f4d6afd7"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="70b65969-4530-413f-95e6-a771a8ab49fc">
+                    <propertyInstance
+                      Id="2f29826a-b2d9-4e21-ab6d-c6721d573621"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9b8d5475-96ce-4b5b-a571-68e0d221d0ce">
+                    <propertyInstance
+                      Id="9faabc46-8924-4117-bccc-5fe3b8d01bdd"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4e90a7d2-b485-4ffe-a7b0-f1d6ab18d360">
+                    <propertyInstance
+                      Id="fded969e-dc21-450d-a61a-ef168ad03c93"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9327bbc2-7c3b-41b2-a12e-719c9df0a68a"
+        name="BoatDAL"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="016d3913-7392-4876-92ae-9d377a1b9a63"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DBoatDAL"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="722d0749-76cd-45f5-a86f-eff47b7c2369"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f5c95a9b-ed10-4573-beb2-05e5bda4f1e8">
+                <propertyInstance
+                  Id="566fe1a6-5bde-4f5c-b039-0be4dd40f326"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d753e223-baa3-4909-a80a-fea2fe050331">
+                <propertyInstance
+                  Id="2d548c4e-c8a0-4417-9c5d-8988a33e2cac"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1655cce2-43c3-4cab-aeee-3021a777f883">
+                <propertyInstance
+                  Id="3dd4808c-9e37-45a6-96fc-fbfed9fe99b4"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="659c7240-d5b6-461a-9d74-15adb7ddb3c3">
+                <propertyInstance
+                  Id="92ad4641-d1b5-41a1-88d7-efc06333f7be"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7c7f6f87-ffcc-42fe-bc6f-1a41379bfdbc">
+                <propertyInstance
+                  Id="64859f35-6a4c-44ec-bfa3-b0cdaa5e1fec"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="cf18e754-27e5-4e70-841e-c4ded4b2fc8d"
+            isSubstitutable="false">
+            <classMoniker
+              Id="1b2a5043-e8eb-46a3-8d59-c4db76d7cea7"
+              LastKnownName="BaseDAL"
+              LastKnownLocation="Package8_1334.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="cd4be706-4c69-4343-bec0-82514bef448b"
+            name="InsertBoat"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a52c22c2-b2d7-4c2a-9f93-4012f5af87f1"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DBoatDAL Member%3D(Name%3DInsertBoat OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.BLL Type%3DBoatBLL)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8e826f87-af47-48db-8a32-59959df73eb4"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="16aad898-ee46-490b-bae9-1cd4f4c3d60c">
+                    <propertyInstance
+                      Id="78ded45e-08dd-4dbd-8619-03af9a9343c8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d974a951-5777-44a2-bd0a-34f69c54740b">
+                    <propertyInstance
+                      Id="0781a13e-a3b0-4f5c-bc30-e5b1d5070c9f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ec338e71-e5ab-4c5c-8694-d24a528b6595">
+                    <propertyInstance
+                      Id="e943ce01-29c1-49a6-9808-fcc4416fdb1a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2f3c17d5-7071-420f-901a-c55b6d5830f1">
+                    <propertyInstance
+                      Id="fdad32ec-eded-463a-b658-5203b455b458"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bf0d2d04-4bbc-4b6e-a010-2ee174b9a71b">
+                    <propertyInstance
+                      Id="6851c304-4edf-49eb-8c31-8f5d0fd915aa"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5cdb3729-80d2-4cdb-bdd0-62b0fcd53b74">
+                    <propertyInstance
+                      Id="a6ad35c6-22a2-43f4-aa68-c9223b6ee21e"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2ac565b7-b78b-413c-b771-b50b117aa71a"
+                  name="boat"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="f009a3a8-7862-44fd-9a0f-eab68ce97c12"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DBoatDAL Member%3D(Name%3DInsertBoat OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.BLL Type%3DBoatBLL)]) ParameterIdentifier%3Dboat"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="982ec28e-be03-4c1c-a05e-0a0f2e409dc3"
+                      LastKnownName="BoatBLL"
+                      LastKnownLocation="Package4_1334.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b454ed05-2438-492a-ac86-efe0d65fb813"
+            name="UpdateBoat"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e48b3ec1-ba88-4472-93e0-3d2fd0e9800a"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DBoatDAL Member%3D(Name%3DUpdateBoat OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.BLL Type%3DBoatBLL)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="53fd401e-3e55-40b6-9978-1ffa6d93da05"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d6ab3817-7239-45c3-a86c-7fa88abd4f09">
+                    <propertyInstance
+                      Id="06849803-fa06-4ac9-8938-3e3e54f47687"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e227a804-32ba-4bc8-8458-000a6d18c7bf">
+                    <propertyInstance
+                      Id="66a628f2-9b76-4266-b5a2-b3666152179e"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7256dd7d-d619-4764-bfff-54d744248806">
+                    <propertyInstance
+                      Id="22d77f6e-f73c-4ba4-b98f-d7572cf09f7a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e9cb2369-4a0b-41a1-81fa-f2d45d6e1682">
+                    <propertyInstance
+                      Id="e5b14bd5-01b4-44ef-89af-6637b7167382"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="89a5acf2-6d88-4ec7-b141-3dcb3768153e">
+                    <propertyInstance
+                      Id="bbad8907-3134-4e49-9d14-78386c126728"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4884e8aa-2c96-48f8-8182-c9db54c0b4ed">
+                    <propertyInstance
+                      Id="bbf709f6-9205-43b1-bb44-65e0c885336c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="65dc08c5-f0fe-4d7f-99c8-2b06f909612f"
+                  name="boat"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="4b073ba8-1a93-48f0-82f7-07740c3c623c"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DBoatDAL Member%3D(Name%3DUpdateBoat OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.BLL Type%3DBoatBLL)]) ParameterIdentifier%3Dboat"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="982ec28e-be03-4c1c-a05e-0a0f2e409dc3"
+                      LastKnownName="BoatBLL"
+                      LastKnownLocation="Package4_1334.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0f1aec3e-9909-43f0-8906-0f4857bb8e60"
+            name="DeleteBoat"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="cae34338-2b82-41f3-8777-f42ea93eafb4"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DBoatDAL Member%3D(Name%3DDeleteBoat OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="555f5d8e-2a42-441e-b2e9-f9844b0a3a5d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2d310057-eff6-4b89-96dd-72be4ecd0cc3">
+                    <propertyInstance
+                      Id="5647e90b-992e-4262-8bcc-c8557517100b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fdb4801e-481d-4571-8e1a-2d7584ca7689">
+                    <propertyInstance
+                      Id="b1bb442b-dff8-4a0e-af62-db063e987986"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="68a669e2-a9dd-4052-b480-d8c7595daf6b">
+                    <propertyInstance
+                      Id="a9f9676d-1ebe-47c6-8137-ad376d44242e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fb84fe55-a3e0-4cc7-9f58-598ea6cb35a8">
+                    <propertyInstance
+                      Id="da1af6a8-af4e-487b-9f66-576f071d8ae1"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bda1878d-64b2-4fb6-b742-40538fe0bc6c">
+                    <propertyInstance
+                      Id="24855641-cb51-47bf-9fdd-e087d9487555"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="96710fa4-5d60-4757-bb48-63a771fc374a">
+                    <propertyInstance
+                      Id="00022723-c9b3-4455-b7f6-ca59a39757aa"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9d2adede-2437-4593-8007-c7479e93f71a"
+                  name="boatId"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="78402d64-c0a4-4885-8577-26544f41cb1f"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DBoatDAL Member%3D(Name%3DDeleteBoat OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3DboatId"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="WS_2.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="3e723122-efeb-467f-9a6d-0285c01d8ce0"
+            name="GetBoat"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="254b1dbc-fe30-460f-a3b3-2477b11d10d3"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DBoatDAL Member%3D(Name%3DGetBoat OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.BLL Type%3DBoatBLL)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f537318c-a4a3-4fa5-9dac-63a44666c0f8"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fec8e3de-e08e-4287-90c9-f6c60d7f7cf8">
+                    <propertyInstance
+                      Id="4efa40a3-c636-4e2c-a173-df4f35cc5974"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0406df31-1702-4265-b2d7-cb96cdf80b2b">
+                    <propertyInstance
+                      Id="1e25eb7d-bab8-4e15-9d37-ba139b402e5a"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d6c22fd2-13cd-4d18-82a0-8f8503c02f94">
+                    <propertyInstance
+                      Id="f6a53090-3ca9-4f6a-9306-34c463196bb2"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d7ff7e79-4fd9-46e4-a60c-b926a00c7a4f">
+                    <propertyInstance
+                      Id="f3442f70-e183-449a-8a07-51c0796f01d6"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7cfef494-97ed-435c-9887-268b549dacd9">
+                    <propertyInstance
+                      Id="1a2c9307-027d-4f1d-acdc-570a1646f16b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9fae1d01-0f2f-4746-bd7b-fd01c53ac09e">
+                    <propertyInstance
+                      Id="dc9fee01-f900-4400-b287-b066f7f130d6"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4a2e1b32-0016-470c-abbe-f4202933efa7"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="982ec28e-be03-4c1c-a05e-0a0f2e409dc3"
+                      LastKnownName="BoatBLL"
+                      LastKnownLocation="Package4_1334.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e52fbf95-6ca2-4b95-b674-28802a5ac859"
+                  name="boat"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="da4181da-986f-4722-a885-2df201641769"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DBoatDAL Member%3D(Name%3DGetBoat OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.BLL Type%3DBoatBLL)]) ParameterIdentifier%3Dboat"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="982ec28e-be03-4c1c-a05e-0a0f2e409dc3"
+                      LastKnownName="BoatBLL"
+                      LastKnownLocation="Package4_1334.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="4005d282-ab9b-4d42-8b0a-0dc7e6f85fc4"
+            name="GetBoats"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a0329af3-d699-4739-870f-4c14f0fa52e9"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DBoatDAL Member%3D(Name%3DGetBoats OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="94d1f969-a4c5-4ba7-af9f-1f8db41c4fc5"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9a63b2f9-1a5f-4ff5-a468-a7d1ad2da6d4">
+                    <propertyInstance
+                      Id="6024cf10-5e48-45ce-9df2-69cc39207e5f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f97c4a56-72de-4236-abec-82c8fbc917b0">
+                    <propertyInstance
+                      Id="c3ac9ce3-624a-45a4-b7b1-7aa304a21ba5"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="de40d061-1497-4718-91ae-3e59a8fd2b05">
+                    <propertyInstance
+                      Id="d3052b3c-2d71-48c9-8d1d-5762baa221c9"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="41487eb9-f896-421d-8a23-6e9884a1907b">
+                    <propertyInstance
+                      Id="d51e9920-91e1-4c68-b28f-4d8668ecd516"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1d58d6a0-97f1-4b85-8ca8-41fb81ef6c6c">
+                    <propertyInstance
+                      Id="86969bf8-be52-4b67-a2fd-3ae29f0483dd"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9634c284-8c88-4b66-afac-4e7071a8fdc4">
+                    <propertyInstance
+                      Id="d58308e2-23ef-43d7-aba3-c8bf79f648b4"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f8545632-a62f-4894-a938-1b9ce273f6de"
+                  direction="Return">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="cf491382-549c-4022-a679-c643bdf07b19"
+                      LastKnownName="IEnumerable&lt;BoatBLL‎&gt;"
+                      LastKnownLocation="Package7_1334.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7f76f5d8-e2dc-4511-a0a9-36690283352a"
+                  name="SSN"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="a18b539b-9436-4ee9-ab58-8beb171c8eb0"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DBoatDAL Member%3D(Name%3DGetBoats OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DSSN"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="WS_2.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5c5b804f-93c8-4b84-9f55-2bd0a60dfd96"
+            name="GetAllBoats"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="7bd4e06e-932a-4cf5-8cc2-a9c37134f2f6"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DBoatDAL Member%3DGetAllBoats"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="00e7ee3e-28b7-4406-9b48-85fc7587269d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a9b548d-1aa5-4a91-8196-c61d5897569b">
+                    <propertyInstance
+                      Id="2abe12a7-2be6-4465-bb34-ca3746bcdeea"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="395ec008-1445-4930-af41-4be3e17ee826">
+                    <propertyInstance
+                      Id="e8126f5b-e9db-4fc6-b8e7-f202e053ed84"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0f6565e9-6af7-4ff0-8429-91b640cded2f">
+                    <propertyInstance
+                      Id="e1ed5cbf-ee84-47ef-be65-566f103ab158"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="076da658-8e63-4994-8472-b9092e5e755f">
+                    <propertyInstance
+                      Id="e20a2aa4-23de-4554-8b57-0d2b22f6b0f9"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ebf3b2b0-5d08-4faf-8e62-26b949d5607d">
+                    <propertyInstance
+                      Id="93e88205-2a6f-44b5-8dbf-97588ce421c4"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f98d5268-ca92-41b8-9d33-fa8d1b0cd3b4">
+                    <propertyInstance
+                      Id="0a385113-2e7f-4e67-ba44-36a4eba83b6f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7c5e0826-95cc-4259-aaa7-1dea2426155c"
+                  direction="Return">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="cf491382-549c-4022-a679-c643bdf07b19"
+                      LastKnownName="IEnumerable&lt;BoatBLL‎&gt;"
+                      LastKnownLocation="Package7_1334.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b17b135c-d5ca-4101-9118-b8a219fb0df9"
+            name="BoatDAL"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="401e2496-497a-45f7-b9de-81aff5c2f692"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DBoatDAL Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b5073045-218b-442e-988a-d8048b8c0d76"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="77a2837c-6168-4abc-9a75-c2ed55b27a47">
+                    <propertyInstance
+                      Id="2c6387f7-422d-44b0-95b5-ae8f8602941b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="97248a2a-edfb-4707-8e93-abb81ceaad8a">
+                    <propertyInstance
+                      Id="a1ab9d55-3218-4f9f-a7c4-b4c439f4d884"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="903d7435-fe72-4c75-9cf6-7ff9f8e2d597">
+                    <propertyInstance
+                      Id="598038d8-0b47-4906-a44e-8df565c616ba"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5f87d31e-8758-432a-9bd9-f623ddd15de2">
+                    <propertyInstance
+                      Id="cc923513-a6f0-48ad-88a0-30e35b06c730"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="24ef2e9a-6e23-4faf-a88d-51df43180562">
+                    <propertyInstance
+                      Id="108545bf-14c4-4651-a1a8-730f0af999f3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aebd8e83-e37d-402b-8952-f0d51ed201db">
+                    <propertyInstance
+                      Id="0feabe02-d3d6-4c19-8e34-8a2ea8dafd72"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1b2a5043-e8eb-46a3-8d59-c4db76d7cea7"
+        name="BaseDAL"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="47169ab0-fb68-4976-a6f2-1720a83a3e9b"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DBaseDAL"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="cc0cf2d5-92ad-4a0f-bb1d-b7b95ba73845"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="113781d1-401f-4e2d-a0fc-00b6a2315168">
+                <propertyInstance
+                  Id="fdfbf57d-8041-4ffa-aa7d-532a9e0bd202"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d772c158-fd84-453f-82f2-57b6f98b44dd">
+                <propertyInstance
+                  Id="98dbb141-f4bf-4437-bd26-b92f2ba9bb82"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fdcd9891-fc2b-4795-bd86-7f2b57e66fc4">
+                <propertyInstance
+                  Id="96105f36-6246-4577-bfef-7c9bf137ab76"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6d3574f0-5333-4455-8b0f-2c331bc853e0">
+                <propertyInstance
+                  Id="117cd58e-2908-4fe4-bb19-bf901e0db6a1"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2bec8975-3710-493c-a114-30e7e58503a6">
+                <propertyInstance
+                  Id="c43244b9-93a1-476f-b333-09eb73a64b9b"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="b4910f4e-e4d1-4ab0-b316-37e7f680fead"
+            name="_connectionString"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="6fd7e757-551d-4de5-9bef-2431638d2773"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DBaseDAL Member%3D_connectionString"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b7859d71-035b-483f-bfd9-cf1ed29a7dfa"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="12386bf6-6ed6-40ac-9bba-bf51d4ff34a6">
+                    <propertyInstance
+                      Id="b12918cd-4f81-4f42-a8c8-89087878ccd4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2b71ec41-73fd-4305-a536-4489066cd9e9">
+                    <propertyInstance
+                      Id="88d9e8fc-4a78-41c4-9f97-e0ee83e33fac"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="313c4cb5-c7f6-4959-8a51-f49dd89e5aab">
+                    <propertyInstance
+                      Id="91c3ade5-4c58-4df9-b340-75c08418d9e1"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="987c986a-41f6-49e0-826f-5c261870c4ba">
+                    <propertyInstance
+                      Id="0876868a-c52d-4988-8aa2-585059e038bc"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="79fdc281-078c-4520-a059-7f8276058e14">
+                    <propertyInstance
+                      Id="592e2126-d694-4ab7-97dd-1a376a202b32"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="WS_2.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="2a505d3f-1568-455a-81c4-1890e0c7b278"
+            name="CreateConnection"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="7a3c85e7-ecb0-4338-999f-612a63ddd7c0"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DBaseDAL Member%3DCreateConnection"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="40b4e79d-72c0-4372-b43b-83bb56493897"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2d698691-8b0b-44ac-a693-d663b142ff81">
+                    <propertyInstance
+                      Id="4bfda367-8b72-416f-bb05-5ac9d0a3e2e2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d0668bc5-5526-4158-977d-abbccd60b3e2">
+                    <propertyInstance
+                      Id="83dd51cb-3fef-44fd-a983-355dfe6e5713"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7f39b3e6-23f1-4a0d-8352-e450c32600db">
+                    <propertyInstance
+                      Id="a6b47acb-0615-4c19-888f-4b82fbef4da5"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a132d950-2594-4dc8-9c6c-966509387810">
+                    <propertyInstance
+                      Id="c43a987b-eea7-43a8-a5f1-766ce6669b5a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1151bff1-2be8-4b14-86ac-f09be56d5720">
+                    <propertyInstance
+                      Id="f4248a29-ea3e-4fa7-aad9-39b103ebce7b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="54764653-afd0-46d5-a11c-f769619d0c2a">
+                    <propertyInstance
+                      Id="b507bb77-57f4-432f-b7f0-32a58b93eb83"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3f5f4c52-10e8-4b05-8999-ca452b2925dd"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="cc652e32-c7a1-4a17-814a-196315946a1d"
+                      LastKnownName="SqlConnection"
+                      LastKnownLocation="Package10_1334.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="8ba4a70e-25f1-4fa3-a733-483b28498006"
+            name="static BaseDAL"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="90adb529-7014-4a66-8257-c0dbb7bbdcfc"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DBaseDAL Member%3D.cctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="37b58e41-96a4-405b-843e-928637e5fb6b"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4989c149-940f-4a15-a091-9943dab53912">
+                    <propertyInstance
+                      Id="5a29c116-0325-4c89-a9b7-ef8711c95608"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="50f4948a-9533-4e5d-a789-5769c56bc68e">
+                    <propertyInstance
+                      Id="d3f02a53-f695-4e0a-a9c8-6513a8464be1"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ef2de1a3-d962-4052-89f5-36f8daa76046">
+                    <propertyInstance
+                      Id="e9aa6a75-f6fb-491f-bd2d-3352451639bb"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b6577b3f-3417-4e7f-97e0-1fc8a925cf64">
+                    <propertyInstance
+                      Id="db02d7c8-a5b7-4897-bd79-275ad601be3b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f05718b5-e085-4c49-bb38-287a01b91d28">
+                    <propertyInstance
+                      Id="a6c6c52d-ef1f-4b07-98a4-9cc6bc80216c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="159fc191-dfe4-4156-a367-ad5b1973d6c8">
+                    <propertyInstance
+                      Id="63f7deee-1ff9-4da7-883a-23df203c4ad0"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="f8eb6c2b-ab3f-4177-84f5-76e6e712c289"
+            name="BaseDAL"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="f58cefc9-be7f-434a-a38a-1439f52fb1bf"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2F1DV607_WS2%2F1DV607_WS2%2F1DV607_WS2%2Fbin%2FRelease%2F1DV607_WS2.exe Namespace%3D_1DV607_WS2.Model.DAL Type%3DBaseDAL Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5446ff83-cd58-4388-a8b2-65961075435f"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b22ca068-db6a-4f16-8563-857c882730e5">
+                    <propertyInstance
+                      Id="de93bb5b-5c17-4c76-b209-14de24828a32"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d81da4aa-22ec-4d49-a6b0-9ef62d5dcf25">
+                    <propertyInstance
+                      Id="1aa3c230-429b-4af1-847b-463971ae52f8"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="27b7e023-2398-49c8-9d61-d01352c2d608">
+                    <propertyInstance
+                      Id="eefe0791-4aa1-410e-ae8d-9fcbbc7b29dc"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c5d16892-8d0b-4fae-aca1-f4bcf7cf2247">
+                    <propertyInstance
+                      Id="b3350f00-e79c-48df-bb07-a84fceb43eef"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bc30fbaf-e0fe-4112-89bc-37f869042c67">
+                    <propertyInstance
+                      Id="ef0303eb-9ddc-4d5b-82ef-c044ca3fb11e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="191d85e6-fb15-4560-b7a7-cac1083f60dc">
+                    <propertyInstance
+                      Id="fe451081-ac83-498a-94d8-379f76e9f861"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

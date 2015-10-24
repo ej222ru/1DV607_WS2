@@ -1,77 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="_1DV607_WS2.Controller.Control">
+  <Class Name="_1DV607_WS2.Controller.Control" Collapsed="true">
     <Position X="5.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAgiCQAAAAAAAAgAAAQAAmAAAAEAAIAACAAAAAAACA=</HashCode>
+      <HashCode>gAAgiCQAAAAAAAAgAAAQAAmAAAAEAAIAACAAAAAQACA=</HashCode>
       <FileName>Controller\Controller.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="_1DV607_WS2.Model.BLL.BoatBLL">
+  <Class Name="_1DV607_WS2.Model.BLL.BoatBLL" Collapsed="true">
     <Position X="1.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAQAAAAAAAAAAAAAAQAAAAAAAAAEAAAAAAAEAAA=</HashCode>
+      <HashCode>EAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAA=</HashCode>
       <FileName>Model\BLL\BoatBLL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="_1DV607_WS2.Model.BLL.MemberBLL">
+  <Class Name="_1DV607_WS2.Model.BLL.MemberBLL" Collapsed="true">
     <Position X="3" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAEAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Model\BLL\MemberBLL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="_1DV607_WS2.Model.DAL.BaseDAL">
-    <Position X="2" Y="3.25" Width="2" />
+  <Class Name="_1DV607_WS2.Model.DAL.BaseDAL" Collapsed="true">
+    <Position X="1.25" Y="4" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>Model\DAL\BaseDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="_1DV607_WS2.Model.DAL.BoatDAL">
-    <Position X="1.25" Y="5.5" Width="1.5" />
+  <Class Name="_1DV607_WS2.Model.DAL.BoatDAL" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAIiAAAAAAAAAAAACAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\DAL\BoatDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="_1DV607_WS2.Model.DAL.MemberDAL">
-    <Position X="3.5" Y="5.5" Width="1.5" />
+  <Class Name="_1DV607_WS2.Model.DAL.MemberDAL" Collapsed="true">
+    <Position X="2.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAACAAAAMAAAAACAAAAAAAAA=</HashCode>
       <FileName>Model\DAL\MemberDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="_1DV607_WS2.Program">
+  <Class Name="_1DV607_WS2.Program" Collapsed="true">
     <Position X="4.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="_1DV607_WS2.View.BoatMenu">
+  <Class Name="_1DV607_WS2.View.BoatMenu" Collapsed="true">
     <Position X="9.25" Y="3.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AQAgAAAAAAAAAAAAIACCAAAABAAAAABAGAAAIIAAAAA=</HashCode>
+      <HashCode>gAACAAwAIAAgAAAAAAAAAAAAAAAAAAQACACAABEAAAA=</HashCode>
       <FileName>View\BoatMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="_1DV607_WS2.View.MemberMenu">
+  <Class Name="_1DV607_WS2.View.MemberMenu" Collapsed="true">
     <Position X="9.25" Y="0.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAAAEAAAAAAAABAAYAAAAAAAAAABAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAABAAAAAIQAQAAEAAAAAAA=</HashCode>
       <FileName>View\MemberMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="_1DV607_WS2.View.Menu">
+  <Class Name="_1DV607_WS2.View.Menu" Collapsed="true">
     <Position X="7" Y="1.25" Width="2" />
+    <NestedTypes>
+      <Enum Name="_1DV607_WS2.View.Menu.UserAction" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>View\Menu.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>CQAAAAAAQgAAABAAIEKCAAAAAABAEIAAGEAAAIAABAA=</HashCode>
+      <HashCode>AABCAAgAAAIgAAAAAEAQAAACAAAA0IQAQACEABkAAAA=</HashCode>
       <FileName>View\Menu.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="BoatType">
-    <Position X="5.25" Y="6.5" Width="1.5" />
+  <Enum Name="BoatType" Collapsed="true">
+    <Position X="5.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAQ=</HashCode>
       <FileName>Model\BLL\BoatBLL.cs</FileName>
